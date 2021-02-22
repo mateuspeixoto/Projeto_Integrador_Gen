@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 
-@Entity @Table(name= "tb_temas") public class Temas {
+@Entity @Table(name= "temas") public class Temas {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) public long id_tema;
 	
