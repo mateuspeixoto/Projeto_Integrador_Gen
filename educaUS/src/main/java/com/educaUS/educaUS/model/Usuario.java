@@ -11,11 +11,11 @@ import com.sun.istack.NotNull;
 
 @Entity
 @Table (name = "usuario")
-public class usuario {
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_usuario;
+	private Long id_usuario;
 	
 	@NotNull
 	@Size (min = 5, max = 100)
@@ -30,11 +30,11 @@ public class usuario {
 	private String senha;
 	
 	
-	public long getId_usuario() {
+	public Long getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(long id_usuario) {
+	public void setId_usuario(Long id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 

@@ -6,23 +6,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity @Table(name= "temas") public class Temas {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) public long id_tema;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id_tema;
 	
-	@NotNull public String tema;
+	@NotNull @Size(min = 2, max = 100) private String tema;
 	
-	@NotNull public String categoria;
+	@NotNull @Size(min = 2, max = 100) private String categoria;
 	
-	@NotNull public String cursos;
+	@NotNull @Size(min = 2, max = 100) private String cursos;
 
-	public long getId_tema() {
+	public Long getId_tema() {
 		return id_tema;
 	}
 
-	public void setId_tema(long id_tema) {
+	public void setId_tema(Long id_tema) {
 		this.id_tema = id_tema;
 	}
 
