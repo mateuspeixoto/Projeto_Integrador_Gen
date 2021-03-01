@@ -2,16 +2,20 @@ package com.educaUS.educaUS.model;
 
 import java.util.Date;
 
-import javax.annotation.Generated;
+//import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+//import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name= "postagem")
@@ -38,9 +42,9 @@ public class Postagem {
 	@Size(min = 1, max = 250)
 	private String comentario;
 	
-	private Long fk_id_usuario;
-	
-	private Long fk_id_tema;
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Temas temas;
 
 	public Long getId() {
 		return id;
@@ -90,22 +94,15 @@ public class Postagem {
 		this.comentario = comentario;
 	}
 
-	public Long getFk_id_usuario() {
-		return fk_id_usuario;
+	public Temas getTemas() {
+		return temas;
 	}
 
-	public void setFk_id_usuario(Long fk_id_usuario) {
-		this.fk_id_usuario = fk_id_usuario;
+	public void setTemas(Temas temas) {
+		this.temas = temas;
 	}
 
-	public Long getFk_id_tema() {
-		return fk_id_tema;
-	}
 
-	public void setFk_id_tema(Long fk_id_tema) {
-		this.fk_id_tema = fk_id_tema;
-	}
-	
 	
 	
 	

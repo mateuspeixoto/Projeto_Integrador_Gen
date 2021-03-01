@@ -22,31 +22,37 @@ import com.educaUS.educaUS.model.Temas;
 @RestController
 @CrossOrigin("*")
 public class TemasController {
-
-	private @Autowired TemasRepository repository;
-
-	public @GetMapping ResponseEntity<List<Temas>> getAll() {
+	
+	@Autowired
+	private  TemasRepository repository;
+    
+	@GetMapping
+	public  ResponseEntity<List<Temas>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
-
-	public @GetMapping("/{id_tema}") ResponseEntity<Temas> getById(@PathVariable Long id_tema) {
-		return repository.findById(id_tema).map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
+    
+	@GetMapping("/{id}")
+	public ResponseEntity<Temas> getById(@PathVariable Long id) {
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
-
-	public @GetMapping("/tema/{tema}") ResponseEntity<List<Temas>> getTema(@PathVariable String tema) {
-		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
+    
+	@GetMapping("/temas/{temas}")
+	public  ResponseEntity<List<Temas>> getTemas(@PathVariable String temas) {
+		return ResponseEntity.ok(repository.findAllByTemasContainingIgnoreCase(temas));
 	}
-
-	public @PostMapping ResponseEntity<Temas> postTema(@RequestBody Temas temas) {
+    
+	@PostMapping
+	public ResponseEntity<Temas> postTemas(@RequestBody Temas temas) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(temas));
 	}
 
-	public @PutMapping ResponseEntity<Temas> putTema(@RequestBody Temas temas) {
+	@PutMapping
+	public  ResponseEntity<Temas> putTemas(@RequestBody Temas temas) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(temas));
 	}
-
-	public @DeleteMapping("/{id_tema}") void deleteTema(@PathVariable Long id_tema) {
-		repository.deleteById(id_tema);
+    
+	@DeleteMapping("/{id}")
+	public  void deleteTemas(@PathVariable Long id) {
+		repository.deleteById(id);
 	}
 }
