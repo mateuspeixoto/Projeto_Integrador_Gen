@@ -1,12 +1,18 @@
 package com.educaUS.educaUS.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 @Entity
@@ -23,13 +29,26 @@ public class Usuario {
 	
 	@NotNull
 	@Size (min = 5, max = 50)
+	@Column (unique = true)
 	private String email;
 	
 	@NotNull
 	@Size (min = 5, max = 50)
 	private String senha;
 	
+	@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties ("usuario")
+	private List<Postagem> postagem;
 	
+	
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
+
 	public Long getId() {
 		return id;
 	}

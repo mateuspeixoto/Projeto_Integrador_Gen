@@ -29,10 +29,10 @@ public class Postagem {
 	private Date postdate = new java.sql.Date(System.currentTimeMillis());
 	
 	@NotNull
-	private int visualizacao;
+	private Long visualizacao;
 	
 	@NotNull
-	private int curtida;
+	private Long curtida;
 	
 	@NotNull
 	@Size(min = 1, max = 500)
@@ -45,6 +45,20 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Temas temas;
+	
+	@ManyToOne
+	@JsonIgnoreProperties ("postagem")
+	private Usuario usuario;
+	
+	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Long getId() {
 		return id;
@@ -62,19 +76,19 @@ public class Postagem {
 		this.postdate = postdate;
 	}
 
-	public int getVisualizacao() {
+	public Long getVisualizacao() {
 		return visualizacao;
 	}
 
-	public void setVisualizacao(int visualizacao) {
+	public void setVisualizacao(Long visualizacao) {
 		this.visualizacao = visualizacao;
 	}
 
-	public int getCurtida() {
+	public Long getCurtida() {
 		return curtida;
 	}
 
-	public void setCurtida(int curtida) {
+	public void setCurtida(Long curtida) {
 		this.curtida = curtida;
 	}
 
