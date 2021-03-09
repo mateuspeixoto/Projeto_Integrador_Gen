@@ -30,18 +30,10 @@ public class Usuario {
 	@NotNull
 	@Size (min = 5, max = 50)
 	@Column (unique = true)
-	private String nomeUsuario;
+	private String email;
 	
-	public String getNomeUsuario() {
-		return nomeUsuario;
-	}
-
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
-	}
-
 	@NotNull
-	@Size (min = 5)
+	@Size (min = 5, max = 50)
 	private String senha;
 	
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -71,6 +63,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getSenha() {
