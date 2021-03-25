@@ -3,20 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LogarComponent } from './logar/logar.component';
 import { LandingComponent } from './landing/landing.component';
-
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     CadastroComponent,
     LogarComponent,
-    LandingComponent
+    LandingComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
