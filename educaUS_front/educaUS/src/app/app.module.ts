@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LogarComponent } from './logar/logar.component';
 import { LandingComponent } from './landing/landing.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
     LogarComponent,
-    LandingComponent
+    LandingComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
