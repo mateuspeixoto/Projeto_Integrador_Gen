@@ -1,12 +1,16 @@
 .linha-vertical{
     height: 350px;
   border-left: 1px solid;
-  color: rgba(0, 17, 255, 0.753);
+  color: #004AAD;
   
 }
 
+.font{
+  font-family: Helvetica, sans-serif;
+}
+
 .color{
-    color: rgba(0, 17, 255, 0.753);
+  color: #004AAD;
 }
 
 
