@@ -1,0 +1,22 @@
+.linha-vertical{
+    height: 350px;
+  border-left: 1px solid;
+  color: rgba(0, 17, 255, 0.753);
+  
+}
+
+.color{
+    color: rgba(0, 17, 255, 0.753);
+}
+
+
+#espaço{
+    margin-top: 100px;
+}
+
+#background-config{
+     min-height: 695px; 
+     background-position: center;
+       background-repeat: no-repeat;
+        background-size: cover;
+}
