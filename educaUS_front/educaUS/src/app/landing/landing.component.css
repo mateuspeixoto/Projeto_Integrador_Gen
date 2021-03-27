@@ -24,6 +24,10 @@
     font-size: 30pt;
     color: white;
 }
+.page-font-blue{
+    font-size: 30pt;
+    color:#004AAD;
+}
 
 .mt-75{
     margin-top: 75px;
@@ -33,26 +37,104 @@
     margin-top: 200px;
 }
 
+
 .img-mt-3{
     margin-top: -3px;
 }
 
 .border-text{
     background-color: #004AAD;
-    width: 709px;
+    width: 850px;
     height: 377px;
-   
-
 }
-
+.border-text-cadastro{
+    background-color: #004AAD;
+    font-size: 70pt;
+    width: 539px;
+    height: 123px;
+}
 .posicao{
     margin-left: -120px;
 }
 
+.posicao-cadastro{
+    margin-left: -50px;
+}
+
+.border-text-aprenda{
+    background-color: #fff;
+    color: #004AAD;
+    font-size: 70pt;
+    width: 449px;
+    height: 123px;
+}
+
+.posicao-aprenda{
+    margin-left: 40px;
+}
+
+.border-text-ensine{
+    background-color: #004AAD;
+    font-size: 70pt;
+    width: 320px;
+    height: 123px;
+}
+
+.posicao-ensine{
+    margin-left: 170px;
+}
+
+.border-text-pergunta{
+    background-color: #fff;
+    color: #004AAD;
+    font-size: 40pt;
+    width: 420px;
+    height: 215px;
+}
+.posicao-pergunta{
+    margin-left: -50px;
+    margin-top: -100px;
+}
+
+.border-text-conecta{
+    background-color: #fff;
+    color: #004AAD;
+    font-size: 35pt;
+    width: 969px;
+    height: 206px;
+}
+.border-text-cadastre_se{
+    background-color: #004AAD;
+    font-size: 50pt;
+    width: 400px;
+    height: 123px;
+}
+
+.posicao-cadastre_se{
+   margin-bottom: -50px;
+   margin-top: 150px;
+}
+
+.border-text-squad{
+    background-color: #fff;
+    color: #004AAD;
+    font-size: 45pt;
+    width: 628px;
+    height: 89px;
+}
 .mt-10{
     margin-top: 10px;
+}
+
+.mt-100{
+    margin-top: 100px;
 }
 
 .mb-10{
     margin-bottom: 10px;
 }
+
+.border{
+    border: 5px solid red;
+}
+
