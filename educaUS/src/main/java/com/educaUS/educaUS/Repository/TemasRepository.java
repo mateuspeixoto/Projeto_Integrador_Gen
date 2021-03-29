@@ -10,6 +10,6 @@ import com.educaUS.educaUS.model.Temas;
 @Repository
 public interface TemasRepository extends JpaRepository<Temas, Long> {
 
-	public List<Temas> findAllByTemasContainingIgnoreCase(String temas);
+	public List<Temas> findAllByNomeContainingIgnoreCase(String nome);
 
 }
