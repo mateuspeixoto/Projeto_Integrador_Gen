@@ -1,3 +1,5 @@
+/*ESTILO NAVBAR*/
+
 .tm-logo{
     width: 160px ;
     height: 90px ;
@@ -15,6 +17,20 @@
     
 }
 
+ul li a{
+    transition: all 0.5s;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    border: 1px solid #004AAD;
+    padding: 5px;   
+    border-radius: 25%;
+}
+
+/*POSICIOMAMENTO ELEMENTOS DAS PAGINAS*/
+
 .page-font{
     font-size: 50pt;
     color: #004AAD;
@@ -24,19 +40,6 @@
     font-size: 30pt;
     color: white;
 }
-.page-font-blue{
-    font-size: 30pt;
-    color:#004AAD;
-}
-
-.mt-75{
-    margin-top: 75px;
-}
-
-.mt-120{
-    margin-top: 200px;
-}
-
 
 .img-mt-3{
     margin-top: -3px;
@@ -46,13 +49,28 @@
     background-color: #004AAD;
     width: 850px;
     height: 377px;
+    box-shadow: 10px 0px 10px #888888;
 }
+
 .border-text-cadastro{
     background-color: #004AAD;
     font-size: 70pt;
     width: 539px;
     height: 123px;
+    transition: all 0.5s;
+    border: 1px solid transparent;
 }
+
+.border-text-cadastro:hover{
+    background-color: #fff;
+    color: #004AAD;
+    font-size: 70pt;
+    width: 539px;
+    height: 123px;
+    box-shadow: 10px 10px 10px #888888;
+    border: 1px solid #004AAD;
+}
+
 .posicao{
     margin-left: -120px;
 }
@@ -67,6 +85,18 @@
     font-size: 70pt;
     width: 449px;
     height: 123px;
+    transition: all 0.5s;
+    border: 1px solid transparent;
+}
+
+.border-text-aprenda:hover{
+    background-color: #004AAD;
+    color: #fff;
+    font-size: 70pt;
+    width: 449px;
+    height: 123px;
+    box-shadow: 10px 10px 10px #888888;
+    border: 1px solid #fff;
 }
 
 .posicao-aprenda{
@@ -76,8 +106,20 @@
 .border-text-ensine{
     background-color: #004AAD;
     font-size: 70pt;
-    width: 320px;
+    width: 319px;
     height: 123px;
+    transition: all 0.5s;
+    border: 1px solid transparent;
+}
+
+.border-text-ensine:hover{
+    background-color: #fff;
+    color: #004AAD;
+    font-size: 70pt;
+    width: 319px;
+    height: 123px;
+    box-shadow: 10px 10px 10px #888888;
+    border: 1px solid #004AAD;
 }
 
 .posicao-ensine{
@@ -108,7 +150,24 @@
     font-size: 50pt;
     width: 400px;
     height: 123px;
+    transition: all 0.5s;
 }
+
+h1 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.border-text-cadastre_se:hover{
+    background-color: #004AAD;
+    font-size: 50pt;
+    width: 400px;
+    height: 123px;
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
+
 
 .posicao-cadastre_se{
    margin-bottom: -50px;
@@ -122,6 +181,19 @@
     width: 628px;
     height: 89px;
 }
+
+
+
+/*MARGENS*/
+
+.mt-75{
+    margin-top: 75px;
+}
+
+.mt-120{
+    margin-top: 200px;
+}
+
 .mt-10{
     margin-top: 10px;
 }

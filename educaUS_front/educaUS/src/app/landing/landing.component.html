@@ -1,3 +1,4 @@
+<!--Barra de navegação-->
 <nav class="navbar  navbar-expand-lg bg-nav sticky-top">
   <a class="navbar-brand" href="#inicio"><img class="ml-5 tm-logo img-fluid mb-0" src="../../assets/img/logo.png"
       alt=""></a>
@@ -19,22 +20,23 @@
       </li>
 
       <li class="nav-item mr-5">
-        <a class="font-weight-bold nav-font" href="#">Cadastro</a>
+        <a class="font-weight-bold nav-font" routerLink='/cadastrar'>Cadastre-se</a>
       </li>
 
       <li class="nav-item mr-5">
-        <a class="font-weight-bold nav-font" href="#">Entrar</a>
+        <a class="font-weight-bold nav-font" routerLink='/entrar'>Entrar</a>
       </li>
 
       <li class="nav-item">
-        <a class="font-weight-bold nav-font" href="#">Equipe</a>
+        <a class="font-weight-bold nav-font" href="#equipe">Equipe</a>
       </li>
     </ul>
 
   </div>
 </nav>
-
-<div id="inicio" class="container mt-75">
+<!--Inicio-->
+<hr id="inicio" class=" mt-0">
+<div  class="container mt-100">
   <div class="row ">
     <div class="col-md-6 mt-5" data-aos="zoom-in" data-aos-duration="5000" data-aos-once="true">
       <h1 class="page-font">Faça seu <span style="text-decoration: underline;">conhecimento</span>
@@ -46,10 +48,11 @@
     </div>
   </div>
 </div>
-
+<!--Direção NavBar-->
+<hr id="sobre" class=" mt-0 mb-5">
 <hr class="mt-5 mb-5">
-<!--Sobre_1-->
-<div id="sobre" class="container mt-75">
+<!--Sobre 1-->
+<div  class="container mt-75">
   <div class="row">
     <div class="col-md-6 mt-120">
       <img src="../../assets/img/mulher.png" alt="Mulher">
@@ -62,34 +65,39 @@
   </div>
 </div>
 
+<!--Direção NavBar-->
+<hr class=" mt-0 mb-5">
 <hr class="mt-5 mb-5">
 <!--Sobre_2-->
-<div id="sobre" class="container mt-75">
+<div class="container mt-75">
   <div class="row">
     <div class="col-md-6">
       <img src="../../assets/img/pessoas.png" alt="Pessoas">
     </div>
     <div class="col-md-6 mt-5">
       <h1 class="pl-3 page-font-white border-text-cadastro posicao-cadastro mb-0">Cadastre-se</h1>
-      <h1 class="pl-3 border-text-aprenda posicao-aprenda mb-0 ">Aprenda</h1>
-      <h1 class="p-3 page-font-white border-text-ensine posicao-ensine  ">Ensine
+      <h1 class="pl-3 border-text-aprenda posicao-aprenda mb-0">Aprenda</h1>
+      <h1 class="p-3 page-font-white border-text-ensine posicao-ensine">Ensine
       </h1>
     </div>
     <div class="row">
       <div class="col-md-6 ">
-        <h1 class="pl-2 border-text-pergunta posicao-pergunta">O que sabe fazer? O que quer aprender? </h1>
+        <h1 class="pl-2 border-text-pergunta posicao-pergunta"
+        data-aos="fade-right" data-aos-duration="3000" data-aos-once="true">O que sabe fazer? O que quer aprender? </h1>
       </div>
     </div>
   </div>
 </div>
 
+<!--Direção NavBar-->
+<hr id="cadastro" class=" mt-0 mb-5">
 <hr class="mt-5 mb-5">
 <!--Cadastro-->
-<div id="sobre" class="container mt-75">
+<div class="container mt-75">
 
   <div class="row">
     <div class="col-md-12 d-flex justify-content-center">
-      <h1 class="border-text-conecta posicao-conecta d-flex justify-content-center align-items-center text-center">
+      <h1 class="border-text-conecta posicao-conecta d-flex justify-content-center align-items-center text-center" data-aos="zoom-in" data-aos-duration="2000" data-aos-once="true">
         Conecte-se com milhares de pessoas<br>
         compartilhando conhecimento e<br>
         alcançando pessoas em todo mundo</h1>
@@ -97,16 +105,18 @@
   </div>
   <div class="row d-flex justify-content-center mt-5 align-items-center">
     <div class="col-md-12 d-flex row-reverse justify-content-around">
-      <img src="../../assets/img/seta1.png">
-      <h1 class="p-3 page-font-white border-text-cadastre_se posicao-cadastre_se ">Cadastre-se</h1>
-      <img src="../../assets/img/seta2.png">
+      <img data-aos="fade-right" data-aos-duration="3000" data-aos-once="true" src="../../assets/img/seta1.png">
+      <h1 class="p-3 border-text-cadastre_se posicao-cadastre_se "><a routerLink='/cadastrar'>Cadastre-se</a></h1>
+      <img data-aos="fade-left" data-aos-duration="4000" data-aos-once="true" src="../../assets/img/seta2.png">
     </div>
 
   </div>
 
 </div>
 
-<hr class="mt-100 mb-5">
+<!--Direção NavBar-->
+<hr id="equipe" class=" mt-100">
+<hr class="mt-5 mb-5">
 
 <!--Equipe-->
 <div class="container mt-75">
