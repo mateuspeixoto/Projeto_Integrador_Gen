@@ -15,7 +15,6 @@ import { RodapeComponent } from './rodape/rodape.component';
   declarations: [
     AppComponent,
     CadastroComponent,
-    EntrarComponent,
     LandingComponent,
     MenuComponent,
     EntrarComponent,

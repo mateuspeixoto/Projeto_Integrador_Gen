@@ -9,7 +9,9 @@ const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
 
   {path: 'home',component:LandingComponent},
-  {path:'entrar', component:EntrarComponent},
+  
+  {path: 'entrar',component: EntrarComponent},
+
   {path: 'cadastrar',component:CadastroComponent}
   
   
