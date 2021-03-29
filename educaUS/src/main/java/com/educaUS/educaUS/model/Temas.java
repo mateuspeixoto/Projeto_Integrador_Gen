@@ -14,21 +14,28 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@Entity
+@Table(name = "temas")
+public class Temas {
 
-@Entity @Table(name= "temas") public class Temas {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
-	
-	@NotNull @Size(min = 2, max = 100) private String temas;
-	
-	@NotNull @Size(min = 2, max = 100) private String categoria;
-	
-	@NotNull @Size(min = 2, max = 100) private String cursos;
-	
-	@OneToMany(mappedBy = "temas" , cascade = CascadeType.ALL)
+	@NotNull
+	@Size(min = 2, max = 100)
+	private String nome;
+
+	@NotNull
+	@Size(min = 2, max = 100)
+	private String categoria;
+
+	@Size(min = 2, max = 100)
+	private String cursos;
+
+	@OneToMany(mappedBy = "temas", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("temas")
 	private List<Postagem> postagem;
-	
 
 	public Long getId() {
 		return id;
@@ -38,12 +45,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		this.id = id;
 	}
 
-	public String getTemas() {
-		return temas;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setTemas(String temas) {
-		this.temas = temas;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCategoria() {
@@ -69,7 +76,5 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
-	
+
 }

@@ -16,22 +16,40 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table (name = "usuario")
+@Table(name = "usuario")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotNull
-	@Size (min = 5, max = 100)
+	@Size(min = 5, max = 100)
 	private String nome;
-	
+
 	@NotNull
-	@Size (min = 5, max = 50)
-	@Column (unique = true)
+	@Size(min = 5, max = 50)
+	@Column(unique = true)
 	private String nomeUsuario;
-	
+
+	@NotNull
+	@Size(min = 5, max = 100)
+	private String email;
+
+	@NotNull
+	@Size(min = 5)
+	private String senha;
+
+	@NotNull
+	private String fotoPerfil;
+
+	@NotNull
+	private String fotoCapa;
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
+	private List<Postagem> postagem;
+
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -40,15 +58,6 @@ public class Usuario {
 		this.nomeUsuario = nomeUsuario;
 	}
 
-	@NotNull
-	@Size (min = 5)
-	private String senha;
-	
-	@OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties ("usuario")
-	private List<Postagem> postagem;
-	
-	
 	public List<Postagem> getPostagem() {
 		return postagem;
 	}
@@ -81,6 +90,28 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(String fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+	public String getFotoCapa() {
+		return fotoCapa;
+	}
+
+	public void setFotoCapa(String fotoCapa) {
+		this.fotoCapa = fotoCapa;
+	}
 
 }
