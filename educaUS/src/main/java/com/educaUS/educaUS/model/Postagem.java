@@ -18,47 +18,31 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name= "postagem")
+@Table(name = "postagem")
 public class Postagem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date postdate = new java.sql.Date(System.currentTimeMillis());
-	
-	@NotNull
-	private Long visualizacao;
-	
-	@NotNull
-	private Long curtida;
-	
+
 	@NotNull
 	@Size(min = 1, max = 500)
 	private String descricao;
-	
-	@NotNull
-	@Size(min = 1, max = 250)
-	private String comentario;
-	
+
+	private Long curtida;
+
+	private String foto;
+
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Temas temas;
-	
+
 	@ManyToOne
-	@JsonIgnoreProperties ("postagem")
+	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
-	
-	
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
 
 	public Long getId() {
 		return id;
@@ -74,14 +58,6 @@ public class Postagem {
 
 	public void setPostdate(Date postdate) {
 		this.postdate = postdate;
-	}
-
-	public Long getVisualizacao() {
-		return visualizacao;
-	}
-
-	public void setVisualizacao(Long visualizacao) {
-		this.visualizacao = visualizacao;
 	}
 
 	public Long getCurtida() {
@@ -100,12 +76,12 @@ public class Postagem {
 		this.descricao = descricao;
 	}
 
-	public String getComentario() {
-		return comentario;
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setComentario(String comentario) {
-		this.comentario = comentario;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public Temas getTemas() {
@@ -116,24 +92,12 @@ public class Postagem {
 		this.temas = temas;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

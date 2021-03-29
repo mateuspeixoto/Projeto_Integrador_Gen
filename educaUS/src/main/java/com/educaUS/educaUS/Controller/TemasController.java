@@ -37,8 +37,8 @@ public class TemasController {
 	}
     
 	@GetMapping("/temas/{temas}")
-	public  ResponseEntity<List<Temas>> getTemas(@PathVariable String temas) {
-		return ResponseEntity.ok(repository.findAllByTemasContainingIgnoreCase(temas));
+	public  ResponseEntity<List<Temas>> getNome(@PathVariable String nome) {
+		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
     
 	@PostMapping
