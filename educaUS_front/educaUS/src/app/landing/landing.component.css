@@ -147,6 +147,7 @@ ul li a:hover{
 }
 .border-text-cadastre_se{
     background-color: #004AAD;
+    color: #fff;
     font-size: 50pt;
     width: 400px;
     height: 123px;
@@ -160,6 +161,7 @@ h1 a{
 
 .border-text-cadastre_se:hover{
     background-color: #004AAD;
+    color: #fff;
     font-size: 50pt;
     width: 400px;
     height: 123px;
