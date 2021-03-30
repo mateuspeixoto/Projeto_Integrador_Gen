@@ -26,7 +26,11 @@ ul li a{
 ul li a:hover{
     border: 1px solid #004AAD;
     padding: 5px;   
-    border-radius: 25%;
+    border-radius: 1%;
+}
+
+.ml-200{
+    margin-left: 200px;
 }
 
 /*POSICIOMAMENTO ELEMENTOS DAS PAGINAS*/
@@ -152,6 +156,7 @@ ul li a:hover{
     width: 400px;
     height: 123px;
     transition: all 0.5s;
+    
 }
 
 h1 a{
@@ -165,11 +170,11 @@ h1 a{
     font-size: 50pt;
     width: 400px;
     height: 123px;
+    box-shadow: 10px 10px 10px #888888;
     -webkit-transform: scale(1.3);
         -ms-transform: scale(1.3);
         transform: scale(1.3);
 }
-
 
 .posicao-cadastre_se{
    margin-bottom: -50px;
@@ -185,8 +190,60 @@ h1 a{
 }
 
 
+/*EQUIPE*/
+
+.text-border{
+    margin-top: 100px;
+    transition: all .5s;
+    border: 10px solid transparent;
+    
+}
+
+.fs-25{
+    font-size: 15pt;
+}
+
+.nome-posicao{
+    margin-top: 100px;
+    margin-bottom: -50px;
+    margin-left: -50px;
+    color: #004AAD;
+    font-size: 30pt;
+    
+}
+
+
+.img-posicao{
+    margin-top: -90px;
+    margin-left: -300px;
+    margin-bottom: -20px;
+}
+    
+
+.img-border{
+    transition: all .5s;
+    border: 10px solid transparent;
+    border-radius: 100%;
+}
+
+
+.img-border:hover{
+    border: 10px solid #004AAD;
+    border-radius: 50%;
+    margin-left: 100px;
+}
+
+.text-border:hover{
+    background-color: #004AAD ;
+    color: #fff;
+    border: 1px solid #004AAD;
+}
 
 /*MARGENS*/
+
+.ml-50{
+    margin-left: -50px;
+}
 
 .mt-75{
     margin-top: 75px;
