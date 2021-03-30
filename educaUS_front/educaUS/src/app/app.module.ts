@@ -8,7 +8,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { EntrarComponent } from './entrar/entrar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RodapeComponent } from './rodape/rodape.component';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { RodapeComponent } from './rodape/rodape.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
