@@ -9,6 +9,7 @@ import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RodapeComponent } from './rodape/rodape.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
