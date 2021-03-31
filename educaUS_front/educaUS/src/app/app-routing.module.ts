@@ -4,6 +4,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { LandingComponent } from './landing/landing.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
 
   {path: 'cadastrar',component:CadastroComponent},
 
-  {path:'feed',component:FeedComponent}
+  {path:'feed',component:FeedComponent},
+
+  {path: 'menu', component:MenuComponent}
   
   
 ];

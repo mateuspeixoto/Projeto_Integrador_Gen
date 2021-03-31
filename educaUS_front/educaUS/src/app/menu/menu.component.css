@@ -1,0 +1,59 @@
+.m-nav {
+    margin-left: 580px;
+}
+
+.fs-nb {
+    font-size: 1.5rem;
+}
+
+.tm-nav {
+    height: 4rem;
+    border-radius: 0% 0% 45px 45px;
+    border-bottom: 1px solid #acb1b9;
+}
+
+.tm-logo {
+    border-radius: 0% 0% 50px 50px
+}
+
+.bd-bt {
+    border-radius: 50px 50px 50px 50px
+}
+
+li:hover {
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+p:hover {
+    color: #007bff;
+}
+
+.bd-cp {
+    border-radius: 0px 0px 45px 45px;
+}
+
+.img-config {
+    width: 1055px;
+    height: 266px;
+    border-bottom: 1px solid #acb1b9;
+}
+
+#perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin-top: -200px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #004AAD
+}
+
+.bd-pf {
+    border: 2px solid #acb1b9;
+    border-top: none;
+    border-radius: 0px 0px 45px 45px;
+    margin-top: -74px;
+    height: 80px;
+    background-color: white;
+}
