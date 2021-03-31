@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { text } from '@fortawesome/fontawesome-svg-core';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
@@ -13,9 +12,6 @@ export class CadastroComponent implements OnInit {
 
   user:User = new User
   confirmSenha: string
-   
-
-
 
   constructor(
     private auth: AuthService ,
