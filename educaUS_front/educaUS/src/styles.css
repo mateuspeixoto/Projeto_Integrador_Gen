@@ -1,12 +1,21 @@
 /* GERAL OFICIAL */
-.font{
-    font-family: Helvetica, sans-serif;
-  }
 
-.color{
+.font {
+    font-family: Helvetica, sans-serif;
+}
+
+.color {
     color: #004AAD;
 }
 
-.border{
-  border: 5px solid red;
+.border {
+    border: 5px solid red;
+}
+
+.bg {
+    background-color: #f3f2ee;
+}
+
+.div-nome {
+    border: 2px;
 }

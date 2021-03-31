@@ -11,6 +11,7 @@ import { LandingComponent } from './landing/landing.component';
 import { MenuComponent } from './menu/menu.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FeedComponent } from './feed/feed.component';
 
 
@@ -29,6 +30,7 @@ import { FeedComponent } from './feed/feed.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FontAwesomeModule,
     FormsModule,
     HttpClientModule
     
