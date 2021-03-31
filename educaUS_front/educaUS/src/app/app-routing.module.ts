@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { FeedComponent } from './feed/feed.component';
 import { LandingComponent } from './landing/landing.component';
 
 
@@ -12,7 +13,9 @@ const routes: Routes = [
   
   {path: 'entrar',component: EntrarComponent},
 
-  {path: 'cadastrar',component:CadastroComponent}
+  {path: 'cadastrar',component:CadastroComponent},
+
+  {path:'feed',component:FeedComponent}
   
   
 ];

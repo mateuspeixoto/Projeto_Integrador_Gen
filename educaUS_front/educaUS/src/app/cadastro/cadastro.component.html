@@ -11,27 +11,27 @@
             <form class="text-start">
                 <div class="form-group">
                     <label for="usuario">Usuário</label>
-                    <input type="usuario" class="form-control" name='usuario' id="usuario"  placeholder="Insira seu nome de usuário">
+                    <input [(ngModel)]='user.email' type="usuario" class="form-control" name='usuario' id="usuario"  placeholder="Insira seu nome de usuário">
                   </div>
                 <div class="form-group">
                   <label for="email">E-mail</label>
-                  <input type="email" class="form-control" name='email' id="email" aria-describedby="emailHelp" placeholder="name@email.com">
+                  <input (keyup)='validaNome($event)' [(ngModel)]='user.nomeUsuario' type="email" class="form-control" name='email' id="email" aria-describedby="emailHelp" placeholder="name@email.com">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Senha (5 ou mais caracteres)</label>
-                  <input type="password" name='senha' class="form-control" id="senha" placeholder="digite sua senha">
+                  <input (input)='confirmarSenha($event)' type="password" name='senha' class="form-control" id="senha" placeholder="digite sua senha">
                 </div>
                 <div class="form-group">
-                    <label for="confirmSenha">Confirmar Senha</label>
-                    <input class="form-control" type="password" name="confirmSenha" id="confirmSenha"
+                    <label for="confirmarSenha">Confirmar Senha</label>
+                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
                         placeholder="Confirme sua senha">
                 </div>
                 <div class="text-center fs-9pt"><p>Ao clicar em Aceite e cadastre-se, você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do EducaUs.</p></div>
                 <div class="d-flex justify-content-center align-items-center">
-                <button type="submit" class="btn text-white b-lg-425 font-weight-bold" style="background-color: #004AAD;">Aceite e Cadastre-se</button>
+                <button (click)='cadastrar()' type="submit" class="btn text-white b-lg-425 font-weight-bold" style="background-color: #004AAD;">Aceite e Cadastre-se</button>
                 </div>
                 <div class="d-flex justify-content-center align-items-center mt-2 mb-5">
-                    <button type="submit" class="btn btn-danger b-lg-425 font-weight-bold">Cancelar</button>
+                    <button type="submit" class="btn btn-danger b-lg-425 font-weight-bold" routerLink='/entrar'>Cancelar</button>
                     </div>
               </form>
         </div>
