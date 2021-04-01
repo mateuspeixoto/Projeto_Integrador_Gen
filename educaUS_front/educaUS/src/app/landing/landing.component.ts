@@ -13,10 +13,4 @@ export class LandingComponent implements OnInit {
     window.scroll(0,0)
   }
   
-  test(event: any){
-    $(function(){ 
-      alert('Hello'); 
-    });
-  }
-
 }
