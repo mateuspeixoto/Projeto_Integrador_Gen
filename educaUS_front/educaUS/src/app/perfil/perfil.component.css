@@ -1,65 +1,85 @@
-/*ESTILO BARRA NAVEGAÇÃO*/
 
-.m-nav {
-    margin-left: 580px;
-}
-
-.fs-nb {
-    font-size: 1.5rem;
-}
-
-.tm-nav {
-    height: 4rem;
-    border-radius: 0% 0% 45px 45px;
-    border-bottom: 1px solid #acb1b9;
-}
-
-.tm-logo {
-    border-radius: 0% 0% 50px 50px
-}
-
-.bd-bt {
-    border-radius: 50px 50px 50px 50px
-}
-
-li:hover {
-    text-decoration: none;
-    font-size: 1.6rem;
-}
-
-p:hover {
-    color: #007bff;
-}
 
 /*ESTILO FOTO PERFIL, FOTO CAPA E INFORMAÇÕES PERFIL*/
 
-.bd-cp {
-    border-radius: 0px 0px 45px 45px;
-}
 
 .img-config {
-    width: 1055px;
-    height: 266px;
+    width: 66rem;
+    height: 17rem;
     border-bottom: 1px solid #acb1b9;
 }
 
 #perfil {
-    width: 150px;
-    height: 150px;
+    width: 9rem;
+    height: 9rem;
     border-radius: 100%;
-    margin-top: -200px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-top: -12.5rem;
+    margin-left: 1.25rem;
+    margin-bottom: 1.25rem;
     border: 2px solid #004AAD
 }
 
 .bd-pf {
+    
     border: 2px solid #acb1b9;
     border-top: none;
-    border-radius: 0px 0px 45px 45px;
-    margin-top: -74px;
-    height: 80px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: -1.5rem;
     background-color: white;
 }
 
-/*COMENTAR POR BLOCO*/
+.tm-container{
+    width: 66rem;
+}
+.persona {
+    
+    border: 2px solid #acb1b9;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    height: 180px ;
+    background-color: white;
+}
+.background-perfil {
+    
+    border: 2px solid #acb1b9;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+    height: 50px ;
+    background-color: white;
+}
+
+.dperfil{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+/*BARRA PESQUISA DO FEED*/
+.btn-outline-primary:hover{
+    color: #ffff;
+    background-color: #007bff;
+    transition: all 0.5s;    
+}
+
+/*#TemasSeguidos*/
+.margin-left{
+    margin-left: 10.5rem;
+}
+.bg-seguidos {
+    
+    border: 2px solid #acb1b9;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+    height: 50px ;
+    background-color: white;
+}
+.font-perfil{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+.font-novo-post{
+    font-size: 1.6rem;
+    text-align: center;
+    
+}
