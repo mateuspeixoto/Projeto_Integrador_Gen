@@ -11,9 +11,10 @@ import { LandingComponent } from './landing/landing.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { FeedComponent } from './feed/feed.component';
-import { MenuComponent } from './menu/menu.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DiretrizesComponent } from './diretrizes/diretrizes.component';
+import { BarrasupComponent } from './barrasup/barrasup.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 
@@ -26,10 +27,11 @@ import { DiretrizesComponent } from './diretrizes/diretrizes.component';
     EntrarComponent,
     RodapeComponent,
     FeedComponent,
-    MenuComponent,
     PerfilComponent,
     DiretrizesComponent,
-   
+    BarrasupComponent,
+    TemaComponent,
+    
     
 
   ],

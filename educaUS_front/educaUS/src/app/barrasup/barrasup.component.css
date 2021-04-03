@@ -1,0 +1,43 @@
+/*ESTILO BARRA NAVEGAÇÃO*/
+
+.m-nav {
+    margin-left: 36rem;
+}
+
+.tm-nav {
+    height: 4rem;
+    border-radius: 0rem 0rem 3rem 3rem;
+    border-bottom: 1px solid #acb1b9;
+}
+
+.tm-logo {
+    border-radius: 0rem 0rem 3rem 3rem
+}
+
+.bd-bt {
+    border-radius: 3rem 3rem 3rem 3rem
+}
+
+.fa-search{
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.fa-search:hover{
+    transition: all 0.1s;
+    font-size: 1rem;
+    color: rgb(210, 221, 223);
+}
+
+ul li a{
+    font-size: 2rem;
+    color: #acb1b9; 
+}
+
+ul li a:hover{
+    transition: all 0.1s;
+    font-size: 2rem;
+    color: #004AAD;
+}
+
+
