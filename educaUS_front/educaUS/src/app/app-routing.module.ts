@@ -7,6 +7,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { LandingComponent } from './landing/landing.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 
@@ -21,6 +22,8 @@ const routes: Routes = [
   {path: 'cadastrar',component:CadastroComponent},
 
   {path:'feed',component:FeedComponent},
+
+  {path:'tema',component:TemaComponent},
 
   {path:'perfil',component:PerfilComponent},
 
