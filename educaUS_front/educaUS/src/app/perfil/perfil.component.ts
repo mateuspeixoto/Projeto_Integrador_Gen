@@ -9,7 +9,8 @@ export class PerfilComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
+    window.scroll(0, 0)
   }
 
 }

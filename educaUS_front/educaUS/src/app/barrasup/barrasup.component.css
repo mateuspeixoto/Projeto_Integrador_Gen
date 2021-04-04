@@ -5,9 +5,9 @@
 }
 
 .tm-nav {
-    height: 4rem;
+    height: 8%;
     border-radius: 0rem 0rem 3rem 3rem;
-    border-bottom: 1px solid #acb1b9;
+    border-bottom: 0.12px solid #acb1b9;
 }
 
 .tm-logo {
@@ -40,4 +40,23 @@ ul li a:hover{
     color: #004AAD;
 }
 
+ul li a:focus{
+    color: #004AAD;
+}
 
+.fa-bars{
+    font-size: 2rem;
+    color: #acb1b9;
+    cursor: pointer;
+}
+
+.fa-bars:hover{
+    transition: all 0.1s;
+    font-size: 2rem;
+    color: #004AAD;
+    cursor: pointer;
+}
+
+ul li a.dropdown-item{
+    font-size: 1.1rem;
+}

@@ -19,7 +19,8 @@ userLogin:UserLogin = new UserLogin()
 
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    window.scroll(0, 0)
   }
 
 
