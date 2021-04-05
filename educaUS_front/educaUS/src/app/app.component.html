@@ -1,7 +1,6 @@
-
 <router-outlet></router-outlet>
 
-<app-rodape></app-rodape>
+<app-rodape *ngIf="auth.notLogado() == true"></app-rodape>
 
 
 

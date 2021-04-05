@@ -13,4 +13,5 @@ export class LandingComponent implements OnInit {
     window.scroll(0,0)
   }
   
+
 }

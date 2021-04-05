@@ -1,5 +1,7 @@
 /* GERAL OFICIAL */
-
+html{
+    scroll-behavior: smooth;
+}
 .font {
     font-family: Helvetica, sans-serif;
 }
