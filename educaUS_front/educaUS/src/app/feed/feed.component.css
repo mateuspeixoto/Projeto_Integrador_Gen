@@ -9,9 +9,11 @@
 
 .img-feed {
     border-radius: 100%;
-    width: 100px;
-    height: 100px;
+    width: 4rem;
+    height: 4rem;
     border-bottom: 1px solid #acb1b9;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
 }
 
 .barra{
@@ -26,8 +28,8 @@
 
 .caixa-feed{
   
-    height: 435px;
-    width: 650px;
+    height: 100%;
+    width: 41rem;
     border: 2px solid #acb1b9;
     border-radius: 10px 10px 10px 10px;
     background-color: white;
@@ -57,10 +59,22 @@
 .caixa-perfil{
     margin-top: 20px;
     border:2px solid #acb1b9;
-    height: 500px;
-    width: 300px;
+    height: 80%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.856);
     border-radius: 10px 10px 10px 10px;
+   
+
+
+}
+.caixa-perfil-2{
+    margin-top: 20px;
+    border:2px solid #acb1b9;
+    height: 80%;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px 10px 10px 10px;
+    
 
 
 }
@@ -74,4 +88,16 @@
 
 .padding{
     padding: 10px;
+}
+
+.caixa-post{
+    height: 9rem;
+    width: 41.6rem;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+}
+.tm-icon{
+    height:30px ;
+    width:100px;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-barrasup',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarrasupComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    window.scroll(0, 0)
+  }
+
+  sair(){
+    this.router.navigate(['/home'])
+    environment.token=''
+    environment.id=0
+    environment.nomeUsuario=''
+    environment.foto=''
+    environment.email=''
   }
 
 }
