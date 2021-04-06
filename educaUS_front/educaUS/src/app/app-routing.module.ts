@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { from } from 'rxjs';
+
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { DiretrizesComponent } from './diretrizes/diretrizes.component';
 import { EntrarComponent } from './entrar/entrar.component';

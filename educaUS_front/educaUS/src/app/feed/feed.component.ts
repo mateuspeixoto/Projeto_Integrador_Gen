@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-feed',
@@ -15,7 +16,14 @@ export class FeedComponent implements OnInit {
   ngOnInit()
    { window.scroll(0,0)
 
+    if(environment.token == ''){
+     
+      alert('Sua sessão expirou, faça login novamente!')
+      this.router.navigate(['/entrar']) }
+
   }
+
+    
 
 
 
