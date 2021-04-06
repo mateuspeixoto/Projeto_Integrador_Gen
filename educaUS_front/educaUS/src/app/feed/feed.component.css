@@ -98,8 +98,12 @@
     background-color: white;
 }
 .tm-icon{
-    height:30px ;
-    width:100px;
+    height:3rem ;
+    width:10rem;
+}
+
+.titulo-centro{
+margin-left: 31%;
 }
 
 .fa {
@@ -151,3 +155,4 @@
 }
 
   
+
