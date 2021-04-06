@@ -1,0 +1,103 @@
+.postagem-feed {
+    
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    height: 200px ;
+    width: 800px;
+    background-color: white;
+}
+
+.img-feed {
+    border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+    border-bottom: 1px solid #acb1b9;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.barra{
+    
+    height: 650px;
+    width: 200px;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+
+}
+
+.caixa-feed{
+  
+    height: 100%;
+    width: 41rem;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+}
+
+.text-area{
+    
+    left: 300px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+}
+
+.publicacao{
+    height: 50px;
+    width: 550px;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+}
+.teste{
+    border: 1px solid red;
+}
+.texto{
+    text-decoration: none;
+}
+
+.caixa-perfil{
+    margin-top: 20px;
+    border:2px solid #acb1b9;
+    height: 80%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px 10px 10px 10px;
+   
+
+
+}
+.caixa-perfil-2{
+    margin-top: 20px;
+    border:2px solid #acb1b9;
+    height: 80%;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px 10px 10px 10px;
+    
+
+
+}
+
+#perfil2{
+    height: 70px;
+    width: 70px;
+    margin-top:15px;
+    margin-left: 15px;
+}
+
+.padding{
+    padding: 10px;
+}
+
+.caixa-post{
+    height: 9rem;
+    width: 41.6rem;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+}
+.tm-icon{
+    height:30px ;
+    width:100px;
+}

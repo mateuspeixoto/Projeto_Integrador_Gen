@@ -24,7 +24,7 @@ export class AuthService {
     }
 
 
-    logado(){
+    Logado(){
      
       let ok : boolean = false 
       if(environment.token != '' ){
@@ -33,6 +33,16 @@ export class AuthService {
       
       return ok
 
+    }
+
+    notLogado(){
+      let ok: boolean = false
+  
+      if(environment.token == ''){
+        ok = true
+      }
+  
+      return ok
     }
 }
 

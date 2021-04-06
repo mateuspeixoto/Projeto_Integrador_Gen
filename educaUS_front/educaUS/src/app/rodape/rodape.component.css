@@ -1,0 +1,20 @@
+.logo{
+    width: 100px;
+    height:100px;
+    padding-top: 3px;
+}
+
+.padding-rodape{
+    padding: 20px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: #000;   
+}
+

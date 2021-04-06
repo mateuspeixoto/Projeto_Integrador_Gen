@@ -1,45 +1,53 @@
 <!--INICIO CADASTRO-->
 <div class="container-fluid ">
-    <div class="d-flex justify-content-center mt-2">
-        <img src="../../assets/img/logo.png" alt="">
-    </div>
-    <div class="row d-flex justify-content-center">
+  <div class="d-flex justify-content-center mt-2">
+    <img src="../../assets/img/logo.png" alt="">
+  </div>
+  <div class="row d-flex justify-content-center">
 
-        <div class="col-md-4 rcorners2 mt-2 ">
-           
-            <h1 class="text-center color mb-3 font font-weight-bold" >Cadastre-se</h1>
-          
-            <!--FORMULÁRIO CADASTRO-->
+    <div class="col-md-4 rcorners2 mt-2 ">
 
-            <form class="text-start">
-                <div class="form-group">
-                    <label for="usuario">Usuário</label>
-                    <input [(ngModel)]='user.email' type="usuario" class="form-control" name='usuario' id="usuario"  placeholder="Insira seu nome de usuário">
-                  </div>
-                <div class="form-group">
-                  <label for="email">E-mail</label>
-                  <input (keyup)='validaNome($event)' [(ngModel)]='user.nomeUsuario' type="email" class="form-control" name='email' id="email" aria-describedby="emailHelp" placeholder="name@email.com">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Senha (5 ou mais caracteres)</label>
-                  <input (input)='confirmarSenha($event)' type="password" name='senha' class="form-control" id="senha" placeholder="digite sua senha">
-                </div>
-                <div class="form-group">
-                    <label for="confirmarSenha">Confirmar Senha</label>
-                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
-                        placeholder="Confirme sua senha">
-                </div>
-                <div class="text-center fs-9pt"><p>Ao clicar em Aceite e cadastre-se, você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do EducaUs.</p></div>
-                <div class="d-flex justify-content-center align-items-center">
-                <button (click)='cadastrar()' type="submit" class="btn text-white b-lg-425 font-weight-bold" style="background-color: #004AAD;">Aceite e Cadastre-se</button>
-                </div>
-                <div class="d-flex justify-content-center align-items-center mt-2 mb-5">
-                    <button type="submit" class="btn btn-danger b-lg-425 font-weight-bold" routerLink='/entrar'>Cancelar</button>
-                    </div>
-              </form>
+      <h1 class="text-center color mb-3 font font-weight-bold">Cadastre-se</h1>
+
+      <!--FORMULÁRIO CADASTRO-->
+
+      <form class="text-start">
+        <div class="form-group">
+          <label for="usuario">Usuário*</label> <span> (5 ou mais caracteres)</span>
+          <input [(ngModel)]='user.nomeUsuario' type="usuario" class="form-control" name='usuario' id="usuario"
+            placeholder="Insira seu nome de usuário">
         </div>
-
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <input [(ngModel)]='user.email' type="email" class="form-control" name='email' id="email"
+            aria-describedby="emailHelp" placeholder="name@email.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Senha*</label> <span> (5 ou mais caracteres)</span>
+          <input (input)='confirmarSenha($event)' type="password" name='senha' class="form-control" id="senha"
+            placeholder="digite sua senha">
+        </div>
+        <div class="form-group">
+          <label for="confirmarSenha">Confirmar Senha*</label>
+          <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmarSenha" id="confirmarSenha"
+            placeholder="Confirme sua senha">
+        </div>
+        <div class="text-center fs-9pt">
+          <p>Ao clicar em "Aceite e Cadastre-se", você aceita-rá o <a routerLink="/diretrizes">Contrato do Usuário</a>,
+            a <a routerLink="/diretrizes">Política de Privacidade</a> e a <a routerLink="/diretrizes">Política de
+              Cookies do EducaUs</a>.</p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <button (click)='cadastrar()' type="submit" class="btn text-white b-lg-425 font-weight-bold"
+            style="background-color: #004AAD;">Aceite e Cadastre-se</button>
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-2 mb-5">
+          <button type="submit" class="btn btn-danger b-lg-425 font-weight-bold" routerLink='/entrar'>Cancelar</button>
+        </div>
+      </form>
     </div>
+
+  </div>
 
 
 </div>
