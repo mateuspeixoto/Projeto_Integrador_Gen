@@ -21,6 +21,8 @@ userLogin:UserLogin = new UserLogin()
 
   ngOnInit() {
     window.scroll(0, 0)
+
+
   }
 
 

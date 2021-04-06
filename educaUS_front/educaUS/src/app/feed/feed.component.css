@@ -100,4 +100,11 @@
 .tm-icon{
     height:3rem ;
     width:10rem;
+    color:  rgba(47, 161, 255, 0.555);
+}
+
+
+#fontConfig{
+    font-weight: bold;
+    opacity: 44%;
 }

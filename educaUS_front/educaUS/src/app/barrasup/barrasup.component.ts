@@ -9,10 +9,15 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class BarrasupComponent implements OnInit {
 
+      token = environment.token
+
+
   constructor( private router:Router) { }
 
   ngOnInit() {
     window.scroll(0, 0)
+
+    
   }
 
   sair(){
