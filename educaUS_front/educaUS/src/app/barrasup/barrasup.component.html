@@ -1,0 +1,56 @@
+<!--BARRA DE NAVEGAÇÃO-->
+<div class="container-fluid">
+    <nav class="navbar py-1 navbar-expand-lg navbar-light bg-white tm-nav d-flex align-items-center">
+        <img src="../../assets/img/logo-educaUs-gif.gif" class="tm-logo ml-3" width="60px" height="60px" alt="">
+        <button class="navbar-toggler bd-bt" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--BOTÕES BARRA DE NAVEGAÇÃO-->
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <form class="form-inline my-2 ml-5">
+                <input class=" form-control mr-sm-2 " type="search " placeholder="Encontre..." aria-label="Pesquisar">
+                <button class="btn btn-primary " type="submit ">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <span class="sinal"></span>
+                </button>
+            </form>
+
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item mr-5">
+                    <a class=" nav-link" routerLink="/feed">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item mr-5">
+                    <a class="nav-link" routerLink="/tema">
+                        <i class="fa fa-hashtag" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item mr-5">
+                    <a class="nav-link" routerLink="/perfil">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                
+
+                <li class="nav-item mr-5 ml-3 dropleft">
+                        <i class="fa fa-bars" id="dropdownMenuButton" aria-hidden="true"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                        <div class="dropdown-menu   " aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" routerLink="/perfil">Editar Perfil
+                            <i class="fa fa-cogs" aria-hidden="true"></i></a>
+                          <a class="dropdown-item" (click)='sair()'>Sair
+                            <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+</div>
