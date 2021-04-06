@@ -4,7 +4,7 @@
 
 
 .img-config {
-    width: 66rem;
+    width: 77.5vw;
     height: 17rem;
     border-bottom: 1px solid #acb1b9;
 }
@@ -23,27 +23,27 @@
     
     border: 2px solid #acb1b9;
     border-top: none;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0 0 1rem 1rem;
     margin-top: -1.5rem;
     background-color: white;
 }
 
 .tm-container{
-    width: 66rem;
+    width: 77.5%;
 }
 .persona {
     
     border: 2px solid #acb1b9;
     border-top: none;
-    border-radius: 0px 0px 10px 10px;
-    height: 180px ;
+    border-radius: 0 0 1rem 1rem;
+    height: 10% ;
     background-color: white;
 }
 .background-perfil {
     
     border: 2px solid #acb1b9;
     border-top: none;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0 0 20px 20px;
     height: 50px ;
     background-color: white;
 }
