@@ -112,6 +112,6 @@ public class Usuario {
 
 	public void setFotoCapa(String fotoCapa) {
 		this.fotoCapa = fotoCapa;
-	}
+	}	
 
 }

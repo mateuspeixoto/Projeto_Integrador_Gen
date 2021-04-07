@@ -29,23 +29,29 @@ export class CadastroComponent implements OnInit {
 
   cadastrar() {
 
-    let usuario : boolean = true
+    let usuario: boolean = true
+    let email: boolean = true 
 
-    if (this.user.nomeUsuario.length <5) {
-     usuario = false
-     alert('Nome de usuario inválido! Insira no minimo 5 caracteres!')
+    if (this.user.nomeUsuario.length < 5) {
+      usuario = false
+      alert('Nome de usuario inválido! Insira no minimo 5 caracteres!')
     }
 
-    else if (this.user.senha != this.confirmSenha) {
-      alert('As senhas não coincidem')
-    } 
-    
-    else {
+    else if (this.user.email.indexOf('@')  == -1 || this.user.email.indexOf('.com') == -1 ){
+      email = false 
+      alert('Email inválido!')
+    }
 
+
+    else if (this.user.senha != this.confirmSenha) {
+      alert('As senhas não coincidem!')
+    }
+
+    else {
       this.auth.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso')
+        alert('Usuário cadastrado com sucesso!')
       })
     }
 
