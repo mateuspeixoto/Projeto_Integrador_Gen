@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 
@@ -15,18 +15,19 @@ export class TemaComponent implements OnInit {
     
   constructor(
     private temaService: TemaService, 
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
 
 
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
-
    this.findAllTema()
+
+   let id = this.route.snapshot.params['id']
+   this.findByIdTema(id)
   }
-
-
   cadastrarTema(){
     this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
       this.tema = resp
@@ -36,10 +37,23 @@ export class TemaComponent implements OnInit {
       
     })
   }
-
   findAllTema(){
     this.temaService.getAllTema().subscribe((resp:Tema[])=> {
       this.listaTema = resp
     })
   }
+
+  findByIdTema(id: number ){
+    this.temaService.getByIdTema(id).subscribe((resp:Tema)=>{
+      this.tema = resp 
+    })
+  }
+
+  editarTema(){
+    this.temaService.putTema(this.tema).subscribe((resp:Tema)=> {
+      this.tema = resp
+      alert('Tema atualizado com sucesso!')
+    })
+  }
+
 }
