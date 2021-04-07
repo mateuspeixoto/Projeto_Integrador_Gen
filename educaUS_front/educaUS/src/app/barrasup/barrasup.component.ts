@@ -16,12 +16,11 @@ export class BarrasupComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
-
     
   }
 
   sair(){
-    this.router.navigate(['/home'])
+    this.router.navigate(['/entrar'])
     environment.token=''
     environment.id=0
     environment.nomeUsuario=''

@@ -20,6 +20,12 @@ userLogin:UserLogin = new UserLogin()
   ) { }
 
   ngOnInit() {
+      
+    environment.token=''
+    environment.id=0
+    environment.nomeUsuario=''
+    environment.foto=''
+    environment.email=''
     window.scroll(0, 0)
 
 
@@ -39,8 +45,6 @@ userLogin:UserLogin = new UserLogin()
       environment.id = this.userLogin.id
       environment.email = this.userLogin.email
       
-
-
     
       this.router.navigate(['/feed']) 
 
