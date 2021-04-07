@@ -56,4 +56,14 @@ export class TemaComponent implements OnInit {
     })
   }
 
+  deleteTema(){
+    let id = this.route.snapshot.params['id']
+    this.findByIdTema(id)
+    this.temaService.delete(id).subscribe(()=>{
+      alert('Tema deletado com sucesso!')
+      this.router.navigate(['/inicio'])
+    })
+
+  }
+
 }
