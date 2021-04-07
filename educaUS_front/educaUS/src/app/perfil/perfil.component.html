@@ -36,9 +36,9 @@
         <div class="col-md-3 persona">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae aperiam libero est autem impedit mollitia minus harum deserunt recusandae rerum, in sequi eum doloremque ipsam amet et velit commodi voluptatum!
         </div>
         <div class="col-md-6 d-flex justify-content-center align-items-baseline background-perfil btn-outline-primary">
-
-            <div class="font-novo-post">Contribua para a comunidade, Usuario: </div>
-
+            <a href="" data-toggle="modal" data-target="#novoPost">
+                <div class="font-novo-post">Contribua para a comunidade, Usuario: </div>
+            </a>
 
         </div>
 
@@ -53,6 +53,42 @@
     </div>
 
 </div>
+
+
+<!-- Modal Perfil -->
+<div class="modal fade " id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white bordaN">
+                <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Novo Post</h4>
+
+
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group row align-items-baseline">
+                        <label for="tema" class="col-sm-2 col-form-label color"><h3 class="text-align font-weight-bold">Tema:</h3></label>
+                        <div class="col-sm-10">
+                            <input type="" class="form-control" id="" placeholder="#tema">
+                        </div>
+                    </div>
+                </form>
+
+                <textarea style="resize: none;" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="d-flex justify-content-center mb-3 ">
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD ;">Publicar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal-->
+
 
 
 <!--CONTINUAÇÃO "COMENTEM"-->
