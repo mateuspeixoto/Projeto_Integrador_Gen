@@ -25,9 +25,16 @@ const routes: Routes = [
 
   {path:'tema',component:TemaComponent},
 
+  {path:'tema/:id',component:TemaComponent},
+
+  {path:'tema/:nome',component:TemaComponent},
+
   {path:'perfil',component:PerfilComponent},
 
   {path:'diretrizes',component:DiretrizesComponent},
+
+
+
   
 ];
 
