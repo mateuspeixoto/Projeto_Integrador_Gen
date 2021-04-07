@@ -1,28 +1,3 @@
-<app-barrasup *ngIf="auth.Logado()"></app-barrasup>
+<app-barrasup *ngIf="auth.Logado() == true"></app-barrasup>
 <router-outlet></router-outlet>
-
 <app-rodape *ngIf="auth.notLogado()"></app-rodape>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
