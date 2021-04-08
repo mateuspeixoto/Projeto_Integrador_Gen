@@ -8,7 +8,7 @@
                 <img src="../../assets/img/capatest2.jpg" class="img-fluid img-config rounded" alt="Imagem responsiva">
             </div>
             <div>
-                <img src="../../assets/img/perfil.png" class="img-fluid " id="perfil" alt="">
+                <img src="../../assets/img/mat.png" class="img-fluid " id="perfil" alt="">
             </div>
         </div>
     </div>
@@ -30,33 +30,97 @@
     </div>
 </div>
 
-<div class="container-fluid ">
 
-    <div class="row d-flex justify-content-center color ">
-        <div class="col-md-3 persona">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae aperiam libero est autem impedit mollitia minus harum deserunt recusandae rerum, in sequi eum doloremque ipsam amet et velit commodi voluptatum!
+
+<div class="container-fluid d-flex justify-content-center color ">
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12 persona">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae aperiam
+                libero est autem impedit mollitia minus harum deserunt recusandae rerum, in sequi eum doloremque
+                ipsam amet et velit commodi voluptatum!
+            </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center align-items-baseline background-perfil btn-outline-primary">
-            <a href="" data-toggle="modal" data-target="#novoPost">
-                <div class="font-novo-post">Contribua para a comunidade, Usuario: </div>
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-md-3 justify-content-start margin-left bg-seguidos">
-            <div class="color font font-perfil">
-                #Temas Seguindo
+        <div class="row">
+            <div class="col-md-12 bg-seguidos">
+                <div class="color font font-perfil">
+                    #Temas Seguindo
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="col-md-6">
+
+        <div class="row">
+            <div class="col-md-12 background-perfil btn-outline-primary">
+                <a href="" data-toggle="modal" data-target="#novoPost">
+                    <div class="font-novo-post">Contribua para a comunidade, Usuario: </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <div class="  caixa-feed mt-3 d-flex flex-column ">
+                    <div class=" col-md-12 d-flex  mb-0 ">
+                        <img src="../../assets/img/mat.png" class="img-feed2" alt="">
+                        <div class="col-md-9 p-0">
+                            <h5 class="mt-3 ml-2 mb-0">Mateus Peixoto</h5>
+                            <span class="text-muted ml-2 ">(@usuario)</span>
+                            <div class="mb-3">
+                                <span class="text-muted ml-2 ">2h</span>
+                            </div>
+                        </div>
+  <!--DROP DAS POSTAGENS-->                      
+                        <div class="d-flex align-items-center justify-content-end margin-left ml-4 mb-0">
+                            <i class="fa fa-ellipsis-h" id="dropdownMenuButton" aria-hidden="true"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-hidden="true"></i>
+                            <div class="dropdown-menu   " aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item"> Apagar
+                                    <i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <a class="dropdown-item" >Editar
+                                    <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="ml-4 mr-4">
+                        <p>
+                            sit, amet consectetur adipisicing elit. Enim sunt eaque optio tempora cumque, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim sunt eaque optio tempora cumque, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim sunt eaque optio
+                            tempora cumque, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim sunt eaque optio tempora cumque,
+
+                        </p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <hr class="ml-2 mr-2">
+                        <div class="row ml-4 d-flex align-items-center text-align-center">
+                            <i class="fa fa-thumbs-o-up mr-2 mb-3" aria-hidden="true"></i>
+                            <p>Curtir</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
 </div>
 
 
+
+
+
+
+
+
 <!-- Modal Perfil -->
-<div class="modal fade " id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade " id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white bordaN">
@@ -64,14 +128,16 @@
 
 
                 <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <form>
 
                     <div class="form-group row align-items-baseline">
-                        <label for="tema" class="col-sm-2 col-form-label color"><h3 class="text-align font-weight-bold">Tema:</h3></label>
+                        <label for="tema" class="col-sm-2 col-form-label color">
+                            <h3 class="text-align font-weight-bold">Tema:</h3>
+                        </label>
                         <div class="col-sm-10">
                             <input type="" class="form-control" id="" placeholder="#tema">
                         </div>
@@ -82,7 +148,8 @@
             </div>
             <div class="d-flex justify-content-center mb-3 ">
                 <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD ;">Publicar</button>
+                <button type="button" class="text-white btn btn-lg modalB"
+                    style="background-color:#004AAD ;">Publicar</button>
             </div>
         </div>
     </div>
