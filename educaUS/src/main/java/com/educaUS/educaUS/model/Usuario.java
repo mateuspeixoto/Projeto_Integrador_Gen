@@ -24,7 +24,7 @@ public class Usuario {
 	private Long id;
 
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 3, max = 100)
 	private String nome;
 
 	@NotNull
@@ -40,10 +40,12 @@ public class Usuario {
 	@Size(min = 5)
 	private String senha;
 
-	@NotNull
+	@Size(min = 5)
+	private String biografia;
+	
 	private String fotoPerfil;
 
-	@NotNull
+	
 	private String fotoCapa;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -112,6 +114,16 @@ public class Usuario {
 
 	public void setFotoCapa(String fotoCapa) {
 		this.fotoCapa = fotoCapa;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
 	}	
+	
+	
 
 }

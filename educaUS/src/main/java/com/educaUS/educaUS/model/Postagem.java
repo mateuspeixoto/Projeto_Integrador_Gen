@@ -32,9 +32,7 @@ public class Postagem {
 	@Size(min = 1, max = 500)
 	private String descricao;
 
-	private Long curtida;
-
-	private String foto;
+	private String link;
 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
@@ -60,28 +58,12 @@ public class Postagem {
 		this.postdate = postdate;
 	}
 
-	public Long getCurtida() {
-		return curtida;
-	}
-
-	public void setCurtida(Long curtida) {
-		this.curtida = curtida;
-	}
-
 	public String getDescricao() {
 		return descricao;
 	}
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
 	}
 
 	public Temas getTemas() {
@@ -98,6 +80,14 @@ public class Postagem {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
 	}
 
 }
