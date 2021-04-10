@@ -26,7 +26,6 @@ public class Temas {
 	@Size(min = 2, max = 100)
 	private String nome;
 
-	@NotNull
 	@Size(min = 2, max = 100)
 	private String categoria;
 

@@ -33,13 +33,11 @@
         <div class="col-md-12 d-flex justify-content-center p-0">
 
             <div class="col-md-8 d-flex justify-content-center">
-                <div class="caixa-perfil-2 p-5 mt-3 d-flex justify-content-center flex-column" style=" height: 400px; overflow: auto;">
+                <div class="caixa-perfil-2 p-5 mt-3 d-flex justify-content-center flex-column"
+                    style=" height: 400px; overflow: auto;">
                     <table class="table table-hover table-light mt-6 mb-2">
                         <thead>
                             <tr class="">
-                                <th scope="col">
-                                    <h4 class="">#</h4>
-                                </th>
                                 <th scope="col">
                                     <h4 class="d-flex justify-content-center">Tema</h4>
                                 </th>
@@ -52,179 +50,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="text-center">Tema #1</td>
-                                <td class="text-center">Descrição #1</td>
+                            <tr *ngFor='let tema of listaTema'>
+                                <td class="text-center">{{tema.id}}</td>
+                                <td class="text-center">#{{tema.nome}}</td>
                                 <td>
                                     <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
+                                        <a href="" data-toggle="modal" data-target="#editarTema"
+                                            style="text-decoration:none" [routerLink]="['/tema', tema.id]">
                                             <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
+                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 "
+                                                    aria-hidden="true"></i>
                                             </div>
                                         </a>
 
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
+                                        <a href="" data-toggle="modal" data-target="#excluirTema"
+                                            style="text-decoration:none" [routerLink]="['/tema', tema.id]">
                                             <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;"
+                                                    aria-hidden="true"></i>
                                             </div>
                                         </a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row text-center">2</th>
-                                <td class="text-center">Tema #2</td>
-                                <td class="text-center">Descrição #2</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row text-center">3</th>
-                                <td class="text-center">Tema #3</td>
-                                <td class="text-center">Descrição #3</td>
-
-
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="text-center">Tema #1</td>
-                                <td class="text-center">Descrição #1</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="text-center">Tema #1</td>
-                                <td class="text-center">Descrição #1</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="text-center">Tema #1</td>
-                                <td class="text-center">Descrição #1</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="text-center">Tema #1</td>
-                                <td class="text-center">Descrição #1</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-
-
-                            <tr>
-                                <th scope="row">1</th>
-                                <td class="text-center">Tema #1</td>
-                                <td class="text-center">Descrição #1</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-
-                                        <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -234,7 +82,8 @@
 
 
     <!-- Modal novo tema-->
-    <div class="modal fade " id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal fade " id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-educa text-white bordaN">
@@ -242,8 +91,8 @@
 
 
                     <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -252,7 +101,8 @@
                             <h3 class="text-center font-weight-bold color">Tema:</h3>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-10">
-                                    <input type="" class="form-control align-items-center" id="" placeholder="Novo tema">
+                                    <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center"
+                                        name="nome" id="nome" placeholder="Novo tema">
                                 </div>
                             </div>
 
@@ -262,8 +112,10 @@
 
                 </div>
                 <div class="d-flex justify-content-center mb-3 ">
-                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD ;">Publicar</button>
+                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB"
+                        data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
+                        data-dismiss="modal" (click)="cadastrarTema()">Publicar</button>
                 </div>
             </div>
         </div>
@@ -272,7 +124,8 @@
     <!--/Modal novo tema-->
 
     <!-- Modal editar tema-->
-    <div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-educa text-white bordaN">
@@ -280,8 +133,8 @@
 
 
                     <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -290,7 +143,8 @@
                             <h3 class="text-center font-weight-bold color">Tema:</h3>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-10">
-                                    <input type="" class="form-control align-items-center" id="" placeholder="Qual tema deseja editar?">
+                                    <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center"
+                                        name="nome" id="nome">
                                 </div>
                             </div>
 
@@ -300,8 +154,10 @@
 
                 </div>
                 <div class="d-flex justify-content-center mb-3 ">
-                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD ;">Atualizar</button>
+                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB"
+                        data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
+                        data-dismiss="modal" (click)="editarTema()">Atualizar</button>
                 </div>
             </div>
         </div>
@@ -310,25 +166,27 @@
 
 
     <!-- Modal excluir tema-->
-    <div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-educa text-white bordaN">
-                    <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Excluir Tema</h4>
+                    <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Excluir Tema
+                    </h4>
 
 
                     <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
 
                         <div class="form-group">
-                            <h3 class="text-center font-weight-bold color">Tema:</h3>
+                            <h3 class="text-center font-weight-bold color">Deseja excluir este tema?</h3>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-10">
-                                    <input type="" class="form-control align-items-center" id="" placeholder="Qual tema deseja excluir?">
+                                    <p class="text-center font-weight-bold">{{tema.nome}}</p>
                                 </div>
                             </div>
 
@@ -338,8 +196,10 @@
 
                 </div>
                 <div class="d-flex justify-content-center mb-3 ">
-                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD ;">Excluir</button>
+                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB"
+                        data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
+                        (click)="deleteTema()" data-dismiss="modal">Excluir</button>
                 </div>
             </div>
         </div>
