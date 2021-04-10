@@ -1,6 +1,7 @@
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { from } from 'rxjs';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { DiretrizesComponent } from './diretrizes/diretrizes.component';
 import { EntrarComponent } from './entrar/entrar.component';
@@ -23,6 +24,8 @@ const routes: Routes = [
 
   {path:'feed',component:FeedComponent},
 
+  {path:'feed/:id',component:FeedComponent},
+
   {path:'tema',component:TemaComponent},
 
   {path:'tema/:id',component:TemaComponent},
@@ -30,6 +33,8 @@ const routes: Routes = [
   {path:'tema/:nome',component:TemaComponent},
 
   {path:'perfil',component:PerfilComponent},
+
+  {path:'perfil/:id',component:PerfilComponent},
 
   {path:'diretrizes',component:DiretrizesComponent},
 
@@ -40,6 +45,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[{
+    provide:LocationStrategy,
+    useClass:HashLocationStrategy
+  }]
 })
 export class AppRoutingModule { }

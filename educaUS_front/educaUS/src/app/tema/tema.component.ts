@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 
@@ -23,6 +24,10 @@ export class TemaComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+    if (environment.token == '') {
+      alert('Sua sessão expirou, faça login novamente!')
+      this.router.navigate(['/entrar'])
+    }
    this.findAllTema()
 
    let id = this.route.snapshot.params['id']
