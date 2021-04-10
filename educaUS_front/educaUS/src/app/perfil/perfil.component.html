@@ -1,6 +1,6 @@
 <!--FOTO DE PERFIL E CAPA-->
 
-<div class="container-fluid pad-0 d-flex justify-content-center">
+<div class="container-fluid pad-0 d-flex justify-content-center font-spartan">
 
     <div class="col-md-12">
 
@@ -23,11 +23,17 @@
         <div class="container-fluid width2 tm-container">
 
             <div class="row ">
-                <div class="col-md-12 bd-pf d-flex justify-content-between row-reverse color font">
+                <div class="col-md-12 bd-pf d-flex justify-content-between row-reverse color font-nome">
 
-                    <div class="dperfil">MATEUS PEIXOTO</div>
+                    <div class="dperfil">Mateus Peixoto</div>
                     <div class="dperfil mr-auto"> @matpeix</div>
-                    <div class="dperfil mr-3">Feed </div>
+                    <a href="">
+                        <div class="dperfil mr-3">
+
+                            <i class="fa fa-cog ml-2" aria-hidden="true"></i>
+                            Perfil
+                        </div>
+                    </a>
 
                 </div>
 
@@ -40,7 +46,7 @@
 
             <!--COL DESCRIÇÃO E TEMAS SEGUIDOS-->
 
-            <div class="col-md-3 aside">
+            <div class="col-md-3 aside text-justify">
                 <div class="row">
                     <div class="col-md-12 persona">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae
                         aperiam
@@ -49,8 +55,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 bg-seguidos">
-                        <div class="color font font-perfil">
+                    <div class="col-md-12 bg-seguidos mt-2">
+                        <div class="color font-perfil">
                             #Temas Seguindo
                         </div>
                     </div>
@@ -64,8 +70,8 @@
                 <!--BOTÃO NOVA POSTAGEM-->
 
                 <div class="row">
-                    <div class="col-md-12 background-perfil btn-outline-primary ml-3">
-                        <a href="" data-toggle="modal" data-target="#novoPost">
+                    <div class="col-md-12 background-perfil novo-post ml-3">
+                        <a href="" class="novo-post-font" data-toggle="modal" data-target="#novoPost">
                             <div class="font-novo-post">Contribua para a comunidade, Usuario: </div>
                         </a>
                     </div>
@@ -82,7 +88,7 @@
                             <div class=" col-md-12 d-flex justify-content-around mb-0 ">
                                 <img src="../../assets/img/mat.png" class="img-feed2" alt="">
                                 <div class="col-md-9 p-0">
-                                    <h5 class="mt-3 ml-2 mb-0">Mateus Peixoto</h5>
+                                    <h5 class="mt-3 ml-2 mb-0 font-nome">Mateus Peixoto</h5>
                                     <span class="text-muted ml-2 ">(@usuario)</span>
                                     <div class="mb-3">
                                         <span class="text-muted ml-2 ">2h</span>
@@ -106,7 +112,7 @@
 
                             <!--TEXTO POSTAGEM-->
 
-                            <div class="ml-4 mr-4">
+                            <div class="ml-4 mr-4 text-justify">
                                 <p>
                                     sit, amet consectetur adipisicing elit. Enim sunt eaque optio tempora cumque, Lorem
                                     ipsum dolor sit, amet consectetur adipisicing elit. Enim sunt eaque optio tempora
@@ -123,10 +129,12 @@
                             <div>
                                 <p></p>
                                 <hr class="ml-2 mr-2">
-                                <div class="row ml-4 d-flex align-items-center text-align-center">
-                                    <i class="fa fa-thumbs-o-up mr-2 mb-3" aria-hidden="true"></i>
-                                    <p>Curtir</p>
-                                </div>
+                                <a href="" >
+                                    <div class="col-md-2 ml-4 mb-2 d-flex">
+                                        <i class="fa fa-thumbs-o-up mr-2 " aria-hidden="true"></i>
+                                        Curtir
+                                    </div>
+                                </a>
 
                             </div>
 
