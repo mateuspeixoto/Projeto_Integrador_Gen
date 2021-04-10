@@ -13,6 +13,7 @@ export class TemaComponent implements OnInit {
 
     tema: Tema = new Tema()
     listaTema: Tema[]  
+    idTema: number
     
   constructor(
     private temaService: TemaService, 
@@ -28,11 +29,14 @@ export class TemaComponent implements OnInit {
       alert('Sua sessão expirou, faça login novamente!')
       this.router.navigate(['/entrar'])
     }
+   
    this.findAllTema()
 
    let id = this.route.snapshot.params['id']
    this.findByIdTema(id)
+
   }
+  
   cadastrarTema(){
     this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
       this.tema = resp
@@ -42,6 +46,7 @@ export class TemaComponent implements OnInit {
       
     })
   }
+  
   findAllTema(){
     this.temaService.getAllTema().subscribe((resp:Tema[])=> {
       this.listaTema = resp
@@ -58,15 +63,17 @@ export class TemaComponent implements OnInit {
     this.temaService.putTema(this.tema).subscribe((resp:Tema)=> {
       this.tema = resp
       alert('Tema atualizado com sucesso!')
+      this.findAllTema()
+      this.router.navigate(['/tema'])
     })
   }
 
   deleteTema(){
-    let id = this.route.snapshot.params['id']
-    this.findByIdTema(id)
+  let id = this.route.snapshot.params['id']
+   this.findByIdTema(id)
     this.temaService.delete(id).subscribe(()=>{
       alert('Tema deletado com sucesso!')
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/tema'])
     })
 
   }
