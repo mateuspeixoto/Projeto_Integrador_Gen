@@ -20,12 +20,15 @@ export class BarrasupComponent implements OnInit {
   }
 
   sair(){
-    this.router.navigate(['/entrar'])
     environment.token=''
-    environment.id=0
-    environment.nomeUsuario=''
-    environment.foto=''
-    environment.email=''
+    environment.id=0,
+    environment.token='',
+    environment.nome='',
+    environment.nomeUsuario='',
+    environment.email='',
+    environment.fotoPerfil='',
+    environment.fotoCapa=''
+    this.router.navigate(['/entrar'])
   }
 
 }

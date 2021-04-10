@@ -5,10 +5,11 @@ export class User {
    nome: string;
    nomeUsuario: string;
    email: string;
+   biografia: string
    fotoPerfil: string; 
    fotoCapa: string;
    senha: string;
    postagem:Postagem[]
-
+   
 
 }

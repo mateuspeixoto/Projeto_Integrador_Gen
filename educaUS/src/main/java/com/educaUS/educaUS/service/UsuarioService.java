@@ -14,37 +14,40 @@ import com.educaUS.educaUS.model.Usuario;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-	
+
 	public Usuario cadastrarUsuario(Usuario usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		
+
 		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder);
 		return usuarioRepository.save(usuario);
-		
+
 	}
 
 	public Optional<UserLogin> logar(Optional<UserLogin> user) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<Usuario> usuario = usuarioRepository.findAllByNomeUsuarioContainingIgnoreCase(user.get().getNomeUsuario());
-		if(usuario.isPresent()){
-			if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
+		Optional<Usuario> usuario = usuarioRepository
+				.findAllByNomeUsuarioContainingIgnoreCase(user.get().getNomeUsuario());
+		if (usuario.isPresent()) {
+			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
 				String auth = user.get().getNomeUsuario() + ":" + user.get().getSenha();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
-				user.get().setToken(authHeader); 
+				user.get().setToken(authHeader);
 				user.get().setFotoPerfil(usuario.get().getFotoPerfil());
-				user.get().setFotoPerfil(usuario.get().getFotoPerfil());
+				user.get().setFotoCapa(usuario.get().getFotoCapa());
 				user.get().setNome(usuario.get().getNome());
 				user.get().setSenha(usuario.get().getSenha());
+				user.get().setId(usuario.get().getId());
+				user.get().setEmail(usuario.get().getEmail());
+				user.get().setBiografia(usuario.get().getBiografia());
 				return user;
 			}
 		}
 		return null;
-		
-		
+
 	}
 }

@@ -2,11 +2,15 @@ package com.educaUS.educaUS.model;
 
 public class UserLogin {
 
+	private Long id;
+
 	private String nome;
 
 	private String nomeUsuario;
 
 	private String senha;
+
+	private String biografia;
 
 	private String email;
 
@@ -15,6 +19,14 @@ public class UserLogin {
 	private String fotoCapa;
 
 	private String token;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNomeUsuario() {
 		return nomeUsuario;
@@ -70,6 +82,14 @@ public class UserLogin {
 
 	public void setFotoCapa(String fotoCapa) {
 		this.fotoCapa = fotoCapa;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
 	}
 
 }

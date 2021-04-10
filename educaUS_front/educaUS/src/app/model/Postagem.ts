@@ -6,11 +6,8 @@ export class Postagem {
 id:number;
 postdate:Date;
 descricao:string;
-curtida:number;
-foto:string;
-temas:Tema;
+link:string;
+tema:Tema;
 usuario:User
-
-
 
 }
