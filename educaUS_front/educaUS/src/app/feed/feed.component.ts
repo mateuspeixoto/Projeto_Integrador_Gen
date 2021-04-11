@@ -10,23 +10,22 @@ import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-feed',
-  templateUrl:'./feed.component.html',
+  templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  postagemUser: Postagem[]
   tema: Tema = new Tema()
   user: User = new User()
   fotoPerfil = environment.fotoPerfil
   nome = environment.nome
   nomeUsuario = environment.nomeUsuario
   idUser = environment.id
-  confirmSenha: string
-  like = 0
-
-  listaTema: Tema[]
   idTema: number
+  confirmSenha: string
+  listaTema: Tema[]
   listaPostagem: Postagem[]
 
   constructor(
@@ -46,7 +45,7 @@ export class FeedComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
-
+    this.findAllTema()
     this.findAllPostagem()
     this.findByIdUser(this.idUser)
 
@@ -69,6 +68,8 @@ export class FeedComponent implements OnInit {
   /*ATUALIZAR DADOS USUARIO*/
 
   atualizar() {
+
+    this.user.postagem = this.postagemUser
 
     let usuario: boolean = true
     let email: boolean = true
@@ -106,9 +107,15 @@ export class FeedComponent implements OnInit {
 
   /*METODOS TEMA*/
 
-  findByIdTema(id: number) {
-    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
       this.tema = resp
+    })
+  }
+
+  findAllTema() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTema = resp
     })
   }
 
@@ -128,10 +135,10 @@ export class FeedComponent implements OnInit {
 
   publicar() {
     this.tema.id = this.idTema
-    this.postagem.tema = this.tema
+    this.postagem.temas = this.tema
     this.user.id = this.idUser
     this.postagem.usuario = this.user
-    
+
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
@@ -139,6 +146,33 @@ export class FeedComponent implements OnInit {
       this.postagem = new Postagem()
     })
 
+  }
+
+  editarPost(){
+    let id = this.route.snapshot.params['id']
+    this.findByIdPostagem(id)
+    this.tema.id = this.idTema
+    this.postagem.temas = this.tema
+    this.user.id = this.idUser
+    this.postagem.usuario = this.user
+    
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
+      this.postagem = resp
+      alert('Postagem alterada com sucesso!')
+      this.findAllPostagem()
+      this.router.navigate(['/feed'])
+    })
+
+  }
+
+  deletarPost(){
+    let id = this.route.snapshot.params['id']
+    this.findByIdPostagem(id)
+    this.postagemService.delete(id).subscribe(()=>{
+    alert('Postagem deletada com sucesso!')
+    this.findAllPostagem()
+    this.router.navigate(['/feed'])
+    })
   }
 
 }
