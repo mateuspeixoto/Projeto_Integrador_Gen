@@ -1,210 +1,200 @@
-<div class="container-fluid col-md-12 ">
+<div class="container">
+    <div class="row d-flex justify-content-center">
 
+        <div class="">
+            <div class="d-flex justify-content-center p-0">
 
-    <div class="row d-flex justify-content-around flex-nowrap">
+                <div class="caixa-post col-md-12 pesquisa">
+                    <div class="mt-4">
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 d-flex justify-content-center p-0">
-
-                    <div class="caixa-post d-flex justify-content-center">
-                        <div class="mt-4">
-
-                            <div>
-                                <h2 class="">Temas</h2>
-                            </div>
-
-
-                            <div class=" row d-flex justify-content-center btn-outline-secondary">
-                                <a href="" data-toggle="modal" data-target="#novoTema" style="text-decoration:none">
-                                    <div class="d-flex justify-content-center">
-                                        <i class="fa fa-plus icon-nv-tema mt-4" aria-hidden="true"></i>
-                                    </div>
-                                </a>
-                            </div>
+                        <div>
+                            <h2 class="d-flex justify-content-center">Temas</h2>
                         </div>
+
+
+                        <div class=" row d-flex justify-content-center">
+                            <a href="" data-toggle="modal" data-target="#novoTema" style="text-decoration:none">
+                                <div class="d-flex justify-content-center ">
+                                    <i class="fa fa-plus icon-nv-tema mt-4" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <nav class="navbar navbar-light bg-white d-flex justify-content-center mt-2 pesquisa-barra">
+                            <form class="form-inline">
+
+                                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema" aria-label="Pesquisar">
+
+                            </form>
+                        </nav>
+
+
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12 d-flex justify-content-center p-0">
+    <div class="d-flex justify-content-center p-0 tab-temas">
 
-            <div class="col-md-8 d-flex justify-content-center">
-                <div class="caixa-perfil-2 p-5 mt-3 d-flex justify-content-center flex-column"
-                    style=" height: 400px; overflow: auto;">
-                    <table class="table table-hover table-light mt-6 mb-2">
-                        <thead>
-                            <tr class="">
-                                <th scope="col">
-                                    <h4 class="d-flex justify-content-center">Tema</h4>
-                                </th>
-                                <th scope="col">
-                                    <h4 class="d-flex justify-content-center">Descrição</h4>
-                                </th>
-                                <th scope="col">
-                                    <h4 class="d-flex justify-content-center">Alteração</h4>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor='let tema of listaTema'>
-                                <td class="text-center">{{tema.id}}</td>
-                                <td class="text-center">#{{tema.nome}}</td>
-                                <td>
-                                    <div class="row d-flex justify-content-center">
-                                        <a href="" data-toggle="modal" data-target="#editarTema"
-                                            style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                            <div>
-                                                <i class="fa fa-pencil icons-edit-del text-center mr-5 "
-                                                    aria-hidden="true"></i>
-                                            </div>
-                                        </a>
+        <div class="d-flex justify-content-center">
+            <div class="caixa-perfil-2 p-5 mt-3 d-flex justify-content-center" style=" height: 400px; overflow: auto;">
+                <table class="table table-hover table-light mt-6 mb-2">
+                    <thead>
+                        <tr class="">
+                            <th scope="col">
+                                <h4 class="d-flex justify-content-center">Tema</h4>
+                            </th>
+                            <th scope="col">
+                                <h4 class="d-flex justify-content-center">Descrição</h4>
+                            </th>
+                            <th scope="col">
+                                <h4 class="d-flex justify-content-center">Alteração</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let tema of listaTema'>
+                            <td class="text-center">{{tema.id}}</td>
+                            <td class="text-center">#{{tema.nome}}</td>
+                            <td>
+                                <div class="row d-flex justify-content-center">
+                                    <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                        <div>
+                                            <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
+                                        </div>
+                                    </a>
 
-                                        <a href="" data-toggle="modal" data-target="#excluirTema"
-                                            style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                            <div class="mr-1">
-                                                <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;"
-                                                    aria-hidden="true"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                    <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                        <div class="mr-1">
+                                            <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- Modal novo tema-->
-    <div class="modal fade " id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-        aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-educa text-white bordaN">
-                    <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Novo Tema</h4>
+<!-- Modal novo tema-->
+<div class="modal fade " id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white bordaN">
+                <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Novo Tema</h4>
 
 
-                    <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <form>
+            </div>
+            <div class="modal-body">
+                <form>
 
-                        <div class="form-group">
-                            <h3 class="text-center font-weight-bold color">Tema:</h3>
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-10">
-                                    <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center"
-                                        name="nome" id="nome" placeholder="Novo tema">
-                                </div>
+                    <div class="form-group">
+                        <h3 class="text-center font-weight-bold color">Tema:</h3>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-10">
+                                <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center" name="nome" id="nome" placeholder="Novo tema">
                             </div>
-
                         </div>
-                    </form>
+
+                    </div>
+                </form>
 
 
-                </div>
-                <div class="d-flex justify-content-center mb-3 ">
-                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB"
-                        data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
-                        data-dismiss="modal" (click)="cadastrarTema()">Publicar</button>
-                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-3 ">
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" data-dismiss="modal" (click)="cadastrarTema()">Publicar</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!--/Modal novo tema-->
+<!--/Modal novo tema-->
 
-    <!-- Modal editar tema-->
-    <div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-        aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-educa text-white bordaN">
-                    <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Editar Tema</h4>
+<!-- Modal editar tema-->
+<div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white bordaN">
+                <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Editar Tema</h4>
 
 
-                    <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <form>
+            </div>
+            <div class="modal-body">
+                <form>
 
-                        <div class="form-group">
-                            <h3 class="text-center font-weight-bold color">Tema:</h3>
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-10">
-                                    <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center"
-                                        name="nome" id="nome">
-                                </div>
+                    <div class="form-group">
+                        <h3 class="text-center font-weight-bold color">Tema:</h3>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-10">
+                                <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center" name="nome" id="nome">
                             </div>
-
                         </div>
-                    </form>
+
+                    </div>
+                </form>
 
 
-                </div>
-                <div class="d-flex justify-content-center mb-3 ">
-                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB"
-                        data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
-                        data-dismiss="modal" (click)="editarTema()">Atualizar</button>
-                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-3 ">
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" data-dismiss="modal" (click)="editarTema()">Atualizar</button>
             </div>
         </div>
     </div>
-    <!--/Modal editar tema-->
+</div>
+<!--/Modal editar tema-->
 
 
-    <!-- Modal excluir tema-->
-    <div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-        aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-educa text-white bordaN">
-                    <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Excluir Tema
-                    </h4>
+<!-- Modal excluir tema-->
+<div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white bordaN">
+                <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Excluir Tema
+                </h4>
 
 
-                    <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    <form>
+            </div>
+            <div class="modal-body">
+                <form>
 
-                        <div class="form-group">
-                            <h3 class="text-center font-weight-bold color">Deseja excluir este tema?</h3>
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-10">
-                                    <p class="text-center font-weight-bold">{{tema.nome}}</p>
-                                </div>
+                    <div class="form-group">
+                        <h3 class="text-center font-weight-bold color">Deseja excluir este tema?</h3>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-10">
+                                <p class="text-center font-weight-bold">{{tema.nome}}</p>
                             </div>
-
                         </div>
-                    </form>
+
+                    </div>
+                </form>
 
 
-                </div>
-                <div class="d-flex justify-content-center mb-3 ">
-                    <button type="button" class="btn btn-danger mr-4 btn-lg modalB"
-                        data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
-                        (click)="deleteTema()" data-dismiss="modal">Excluir</button>
-                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-3 ">
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" (click)="deleteTema()" data-dismiss="modal">Excluir</button>
             </div>
         </div>
     </div>
-    <!-- /Modal excluir tema-->
+</div>
+<!-- /Modal excluir tema-->
 
 
 
@@ -240,7 +230,7 @@
 
 
 
-    <!--versão1.0 feed
+<!--versão1.0 feed
 
 
 <div class="container-fluid mt-5">
@@ -265,7 +255,7 @@
         </div>
     </div>
 </div>  -->
-    <!-- 
+<!-- 
 
 
 

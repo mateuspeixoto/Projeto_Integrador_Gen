@@ -1,28 +1,3 @@
-.postagem-feed {
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    height: 200px;
-    width: 800px;
-    background-color: white;
-}
-
-.img-feed {
-    border-radius: 100%;
-    width: 4rem;
-    height: 4rem;
-    border-bottom: 1px solid #acb1b9;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-}
-
-.barra {
-    height: 650px;
-    width: 200px;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    background-color: white;
-}
-
 .caixa-feed {
     height: 100%;
     width: 41rem;
@@ -31,59 +6,17 @@
     background-color: white;
 }
 
-.text-area {
-    left: 300px;
-    right: 5px;
-    top: 5px;
-    bottom: 5px;
-}
-
-.publicacao {
-    height: 3rem;
-    width: 33rem;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-}
-
-.teste {
-    border: 1px solid red;
-}
-
-.texto {
-    text-decoration: none;
-}
-
-.caixa-perfil {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 50%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 1rem 1rem 1rem 1rem;
-}
-
 .caixa-perfil-2 {
     margin-top: 2rem;
+    width: 54rem;
     border: 2px solid #acb1b9;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.856);
     border-radius: 1rem 1rem 1rem 1rem;
-}
-
-#perfil2 {
-    height: 7rem;
-    width: 7rem;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-}
-
-.padding {
-    padding: 1rem;
 }
 
 .caixa-post {
-    height: 11rem;
-    width: 65%;
+    height: 14rem;
+    width: 54rem;
     border: 2px solid #acb1b9;
     border-radius: 1rem 1rem 1rem 1rem;
     background-color: white;
@@ -118,12 +51,6 @@
     height: 40%;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
-}
-
-.anuncio {
-    margin-top: 20px;
-    width: 100%;
     border-radius: 10px 10px 10px 10px;
 }
 
@@ -173,17 +100,6 @@
     margin-right: 12rem;
 }
 
-.btn-outline-secondary:hover {
-    background-color: #acb1b9;
-    transition: all 1s;
-    border-bottom-left-radius: 100%;
-    border-bottom-right-radius: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    height: 6rem;
-    width: auto;
-}
-
 .table-overflow {
     max-height: 250px;
     overflow-y: auto;
@@ -196,4 +112,48 @@
 .icon-nv-tema {
     font-size: 3rem;
     color: #004AAD
+}
+
+.fa-search {
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #004AAD;
+}
+
+.btn-primary {
+    background-color: #004AAD;
+}
+
+@media (max-width: 880.00px) {
+    .pesquisa {
+        width: 20rem;
+        margin-left: 16rem;
+    }
+    .tab-temas {
+        width: 20rem;
+        margin-left: 16rem;
+    }
+    .bg-seguidos {
+        display: none;
+    }
+    .aside {
+        display: none;
+    }
+    .background-perfil {
+        padding: 0%;
+        width: 100%;
+    }
+    .width {
+        width: 100%;
+    }
+    .width2 {
+        width: 100%;
+    }
+    .width3 {
+        width: 100%;
+        padding-left: 0%;
+    }
+    .pad-0 {
+        padding: 0%;
+    }
 }

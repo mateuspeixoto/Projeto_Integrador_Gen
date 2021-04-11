@@ -12,8 +12,10 @@
                 </div>
 
                 <div class="mt-3 text-center">
+
                     <a class="h-link" [routerLink]="['/perfil', user.id]">
                         <h5 class="font-nome color">{{nome}}</h5>
+
                     </a>
                     <hr class="ml-3">
                     <p class="text-muted font">@{{nomeUsuario}}</p>
@@ -47,6 +49,7 @@
 
         <!--NOVO POST-->
 
+
         <div class="col-md-6 p-0 d-flex flex-column justify-content-center">
             <div class="box d-flex">
                 <img src="{{fotoPerfil}}" class="img-feed img-fluid" id="perfil" alt="">
@@ -59,6 +62,7 @@
                            
                         </div>
                     </a>
+
 
                     </div>
                     
@@ -83,6 +87,7 @@
                 <hr class="mt-3">
             </div>
 
+
             <hr>
 
             <!--minha postagem-->
@@ -97,6 +102,7 @@
                                 <div class="mr-5">
                                     <a class="h-link" [routerLink]="['/perfil', post.usuario.id]">
                                         <h5 class="mt-4 ml-2 mb-0 font-nome color">{{post.usuario.nome}}</h5>
+
                                     </a>
                                     <span class="text-muted ml-2 ">(@{{post.usuario.nomeUsuario}})</span>
                                     <div class="mb-3">
@@ -168,7 +174,9 @@
 
     </div>
 
+
 </div>
+
 
 <!-- Modal Novo Post-->
 <div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
@@ -189,6 +197,7 @@
                         <label for="tema" class="col-md-2 col-form-label color mr-3">
                             <h3 class="text-align">Tema:</h3>
                         </label>
+
                         <select class="col-md-8 form-control" name="" id="" [(ngModel)]="idTema">
                             <option value="">Escolha...</option>
                         </select>
@@ -275,11 +284,13 @@
                     routerLink="['/feed']">Cancelar</button>
                 <button type="button" class="text-white btn" style="background-color:#004AAD;" (click)="atualizar()"
                     data-dismiss="modal">Atualizar</button>
+
             </div>
         </div>
     </div>
 </div>
 <!--/Modal Editar Perfil-->
+
 
 <!-- Modal Novo Post (COM LINK)-->
 <div class="modal fade" id="novoPostLink" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
@@ -322,6 +333,7 @@
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="text-white btn" style="background-color:#004AAD;" (click)="publicar()"
                     data-dismiss="modal">Publicar</button>
+
             </div>
         </div>
     </div>
