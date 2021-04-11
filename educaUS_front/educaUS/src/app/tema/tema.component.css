@@ -1,26 +1,7 @@
-.caixa-feed {
-    height: 100%;
-    width: 41rem;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    background-color: white;
-}
+/* Estilização - Botões */
 
-.caixa-perfil-2 {
-    margin-top: 2rem;
-    width: 54rem;
-    border: 2px solid #acb1b9;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 1rem 1rem 1rem 1rem;
-}
-
-.caixa-post {
-    height: 14rem;
-    width: 54rem;
-    border: 2px solid #acb1b9;
-    border-radius: 1rem 1rem 1rem 1rem;
-    background-color: white;
-    margin-top: 2rem;
+.btn-primary {
+    background-color: #004AAD;
 }
 
 .tm-icon {
@@ -28,64 +9,22 @@
     width: 10rem;
 }
 
-.titulo-centro {
-    margin-left: 31%;
-}
-
 .fa {
     color: rgba(47, 161, 255, 0.555);
 }
 
-.caixa-anuncio {
-    margin-top: 20px;
-    border: 2px solid #acb1b9;
-    height: 50%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
-}
-
-.caixa-direita {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 40%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
-}
-
-.img-feed2 {
-    border-radius: 100%;
-    width: 4.5rem;
-    height: 4.5rem;
-    border-bottom: 1px solid #acb1b9;
-    margin-top: 1.5rem;
-    margin-left: 0.5rem;
-}
-
-.artigo-icon {
-    height: 2rem;
-    width: 2rem;
-}
-
-.link-icon {
-    font-size: 2rem;
-    color: #000000;
-}
-
 .icons-edit-del {
     font-size: 1.5rem;
+    color: #004AAD;
+}
+
+.icon-nv-tema {
+    font-size: 3rem;
     color: #004AAD
 }
 
-.cor-tema {
-    color: #acb1b9;
-}
 
-.titulo-centro {
-    margin-left: 31%;
-    font-size: 25pt;
-}
+/* Estilização - Modais */
 
 .modalB {
     width: 200px;
@@ -100,60 +39,63 @@
     margin-right: 12rem;
 }
 
-.table-overflow {
-    max-height: 250px;
-    overflow-y: auto;
-}
-
-.mt-6 {
-    margin-top: 6rem;
-}
-
-.icon-nv-tema {
-    font-size: 3rem;
-    color: #004AAD
-}
-
 .fa-search {
     font-size: 1.1rem;
     color: #fff;
     background-color: #004AAD;
 }
 
-.btn-primary {
-    background-color: #004AAD;
+.titulo-centro {
+    margin-left: 31%;
+    font-size: 25pt;
 }
 
-@media (max-width: 880.00px) {
-    .pesquisa {
-        width: 20rem;
-        margin-left: 16rem;
+
+/* Responsividade */
+
+@media (max-width: 575.00px) {
+    .posi-bt-pesq {
+        justify-content: center;
     }
-    .tab-temas {
-        width: 20rem;
-        margin-left: 16rem;
+}
+
+@media (max-width: 399.00px) {
+    .table td {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        justify-content: center;
     }
-    .bg-seguidos {
-        display: none;
+    .table th {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
     }
-    .aside {
-        display: none;
-    }
-    .background-perfil {
-        padding: 0%;
-        width: 100%;
-    }
-    .width {
-        width: 100%;
-    }
-    .width2 {
-        width: 100%;
-    }
-    .width3 {
-        width: 100%;
-        padding-left: 0%;
-    }
-    .pad-0 {
-        padding: 0%;
-    }
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+}
+
+element.style {
+    padding-right: 0%;
+}
+
+
+/* Caixas */
+
+.caixa-um {
+    height: 14rem;
+    border: 2px solid #acb1b9;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background-color: white;
+}
+
+.caixa-dois {
+    margin-top: 2rem;
+    border: 2px solid #acb1b9;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 1rem 1rem 1rem 1rem;
 }

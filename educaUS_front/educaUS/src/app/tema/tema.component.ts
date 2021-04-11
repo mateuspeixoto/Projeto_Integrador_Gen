@@ -64,7 +64,7 @@ export class TemaComponent implements OnInit {
       this.tema = resp
       this.alert.showAlertSuccess('Tema atualizado com sucesso!')
       this.findAllTema()
-      this.router.navigate(['/tema'])
+      this.tema = new Tema()
     })
   }
 
@@ -73,7 +73,8 @@ export class TemaComponent implements OnInit {
    this.findByIdTema(id)
     this.temaService.delete(id).subscribe(()=>{
       this.alert.showAlertInfo('Tema deletado com sucesso!')
-      this.router.navigate(['/tema'])
+      this.findAllTema()
+      this.tema = new Tema()
     })
 
   }
