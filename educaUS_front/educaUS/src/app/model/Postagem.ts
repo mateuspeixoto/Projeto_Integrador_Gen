@@ -7,7 +7,7 @@ id:number;
 postdate:Date;
 descricao:string;
 link:string;
-tema:Tema;
+temas:Tema;
 usuario:User
 
 }

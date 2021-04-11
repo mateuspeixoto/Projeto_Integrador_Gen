@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
+
 
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -14,6 +18,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { DiretrizesComponent } from './diretrizes/diretrizes.component';
 import { BarrasupComponent } from './barrasup/barrasup.component';
 import { TemaComponent } from './tema/tema.component';
+
 
 
 
@@ -30,6 +35,7 @@ import { TemaComponent } from './tema/tema.component';
     DiretrizesComponent,
     BarrasupComponent,
     TemaComponent,
+    AlertasComponent,
     
     
 
@@ -38,7 +44,9 @@ import { TemaComponent } from './tema/tema.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule,
+    ModalModule.forRoot()
     
   ],
   providers: [],

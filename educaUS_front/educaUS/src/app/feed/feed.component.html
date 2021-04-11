@@ -56,21 +56,20 @@
                 <div class="mt-3 texto padding">
                     <div class="publicacao">
                         <a data-toggle="modal" data-target="#novoPost" style="text-decoration:none">
-                        <div class="ml-2">
-                            
+                            <div class="ml-2">
+
                                 <p class="text-muted line">Novo Post</p>
-                           
-                        </div>
-                    </a>
+
+                            </div>
+                        </a>
 
 
                     </div>
-                    
+
                     <div class="d-flex justify-content-around">
 
                         <a class="h-link" data-toggle="modal" data-target="#novoPost">
-                            <div class="row mt-3"><img src="../../assets/img/artigoicon.png" class="artigo-icon"
-                                    alt="">
+                            <div class="row mt-3"><img src="../../assets/img/artigoicon.png" class="artigo-icon" alt="">
                                 <p class="mt-2  ml-2 cb" style="font-weight: bold;opacity: 44%;">Artigo</p>
                             </div>
                         </a>
@@ -94,8 +93,7 @@
 
             <div>
                 <div class="d-flex flex-column justify-content-center">
-                    <div class="box mt-3 d-flex flex-column justify-content-center"
-                        *ngFor='let post of listaPostagem'>
+                    <div class="box mt-3 d-flex flex-column justify-content-center" *ngFor='let post of listaPostagem | orderBy : key : reverse'>
                         <div>
                             <div class="d-flex ">
                                 <img src="{{post.usuario.fotoPerfil}}" class="img-feed" id="perfil" alt="">
@@ -110,17 +108,20 @@
                                             {{post.postdate | date:'HH:mm'}}
                                         </span>
                                     </div>
-                                    
+
                                 </div>
 
-                                <div class="d-flex align-items-center justify-content-end margin-left ml-5 mb-0">
+                                <div class="d-flex align-items-center justify-content-end margin-left ml-5 mb-0"
+                                    *ngIf="post.usuario.id == idUser">
                                     <i class="fa fa-ellipsis-h" id="dropdownMenuButton" aria-hidden="true"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         aria-hidden="true"></i>
-                                    <div class="dropdown-menu   " aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item"> Apagar
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#excluirPost"
+                                            [routerLink]="['/feed', post.id]"> Apagar
                                             <i class="fa fa-trash" aria-hidden="true"></i></a>
-                                        <a class="dropdown-item">Editar
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#editarPost"
+                                            [routerLink]="['/feed', post.id]">Editar
                                             <i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
@@ -128,7 +129,7 @@
 
                             </div>
                         </div>
-                        <h5 class="ml-4">#TEMA</h5>
+                        <h5 class="ml-4">#{{post.temas.nome}}</h5>
                         <div>
                             <div class=" d-flex">
                                 <div class="ml-4 mr-4">
@@ -157,7 +158,8 @@
             <div class="text-center box p-3 flex-column">
                 <p>Pesquisa</p>
                 <form class="form-inline my-2">
-                    <input class=" form-control mr-sm-2 " type="search " placeholder="Encontre..." aria-label="Pesquisar">
+                    <input class=" form-control mr-sm-2 " type="search " placeholder="Encontre..."
+                        aria-label="Pesquisar">
                 </form>
 
             </div>
@@ -180,7 +182,7 @@
 
 <!-- Modal Novo Post-->
 <div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
+    aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white">
@@ -198,14 +200,15 @@
                             <h3 class="text-align">Tema:</h3>
                         </label>
 
-                        <select class="col-md-8 form-control" name="" id="" [(ngModel)]="idTema">
-                            <option value="">Escolha...</option>
+                        <select class="col-md-8 form-control" name="tema" id="tema" [(ngModel)]='idTema'
+                            (change)='findByIdTema()'>
+                            <option *ngFor='let tema of listaTema' value="{{tema.id}}">{{tema.nome}}</option>
                         </select>
                         <p class="ml-3">Não possui tema? <a routerLink="/tema" data-dismiss="modal">Cadastre um
                                 novo!</a></p>
                     </div>
-                    <!--QUEBRAR LINHA NO TEXTO DESCRIÇÃO-->
-                    <label for="tema" class="col-form-label color">
+
+                    <label for="descricao" class="col-form-label color">
                         <h6 class="text-align">Descrição</h6>
                     </label>
                     <textarea [(ngModel)]="postagem.descricao" style="resize: none;" class="form-control"
@@ -238,8 +241,8 @@
                 <form class="text-start">
                     <div class="form-group">
                         <label for="usuario">Usuário*</label> <span> (5 ou mais caracteres)</span>
-                        <input [(ngModel)]='user.nomeUsuario' type="usuario" class="form-control" name='usuario'
-                            id="usuario" placeholder="Insira seu nome de usuário">
+                        <input [(ngModel)]='user.nomeUsuario' type="text" class="form-control" name='nomeUsuario'
+                            id="nomeUsuario" placeholder="Insira seu nome de usuário">
                     </div>
                     <div class="form-group">
                         <label for="biografia">Biografia*</label> <span> (5 ou mais caracteres)</span>
@@ -249,12 +252,12 @@
                     </div>
                     <div class="form-group">
                         <label for="nome">Nome*</label> <span> (3 ou mais caracteres)</span>
-                        <input [(ngModel)]='user.nome' type="nome" class="form-control" name='nome' id="nome"
+                        <input [(ngModel)]='user.nome' type="text" class="form-control" name='nome' id="nome"
                             placeholder="Insira seu Nome e Sobrenome">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail*</label>
-                        <input [(ngModel)]='user.email' type="email" class="form-control" name='email' id="email"
+                        <input [(ngModel)]='user.email' type="text" class="form-control" name='email' id="email"
                             aria-describedby="emailHelp" placeholder="name@email.com">
                     </div>
                     <div class="form-group">
@@ -268,12 +271,12 @@
                             id="confirmarSenha" placeholder="Confirme sua senha">
                     </div>
                     <div class="form-group">
-                        <label for="fotoPerfil">Link foto perfil*</label><span> (Recomendável 600x600)</span>
+                        <label for="fotoPerfil">Link foto perfil*</label><span> (DIRECT LINK IMGUR)</span>
                         <input [(ngModel)]='user.fotoPerfil' class="form-control" type="text" name="fotoPerfil"
                             id="fotoPerfil" placeholder="Insira o link IMGUR">
                     </div>
                     <div class="form-group">
-                        <label for="fotoCapa">Link foto capa*</label><span> (Recomendável 900x300)</span>
+                        <label for="fotoCapa">Link foto capa*</label><span> (DIRECT LINK IMGUR)</span>
                         <input [(ngModel)]='user.fotoCapa' class="form-control" type="text" name="fotoCapa"
                             id="fotoCapa" placeholder="Insira o link IMGUR">
                     </div>
@@ -291,10 +294,9 @@
 </div>
 <!--/Modal Editar Perfil-->
 
-
 <!-- Modal Novo Post (COM LINK)-->
 <div class="modal fade" id="novoPostLink" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
+    aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white">
@@ -308,20 +310,23 @@
             <div class="modal-body">
                 <form class="form-group">
                     <div class="row d-flex align-items-baseline mb-0">
-                        <label for="tema" class="col-md-2 col-form-label color mr-3">
+                        <label for="temalink" class="col-md-2 col-form-label color mr-3">
                             <h3 class="text-align">Tema:</h3>
                         </label>
-                        <select class="col-md-8 form-control" name="" id="" [(ngModel)]="idTema">
-                            <option value="">Escolha...</option>
+
+                        <select class="col-md-8 form-control" name="idTema" id="idTema" [(ngModel)]='idTema'
+                            (change)='findByIdTema()'>
+                            <option *ngFor='let item of listaTema' value="{{item.id}}">{{item.nome}}</option>
                         </select>
                         <p class="ml-3">Não possui tema? <a routerLink="/tema" data-dismiss="modal">Cadastre um
                                 novo!</a></p>
                     </div>
-                    <label for="descricao" class="col-form-label color">
+
+                    <label for="descricaolink" class="col-form-label color">
                         <h6 class="text-align">Descrição</h6>
                     </label>
                     <textarea [(ngModel)]="postagem.descricao" style="resize: none;" class="form-control"
-                        name="descricao" id="descricao" cols="30" rows="5"></textarea>
+                        name="descricaolink" id="descricaolink" cols="30" rows="10"></textarea>
                     <label for="link" class="col-form-label color">
                         <h6 class="text-align">Link</h6>
                     </label>
@@ -333,9 +338,94 @@
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="text-white btn" style="background-color:#004AAD;" (click)="publicar()"
                     data-dismiss="modal">Publicar</button>
-
             </div>
         </div>
     </div>
 </div>
 <!--/Modal Novo Post-->
+
+<!-- Modal Editar Post (COM LINK)-->
+<div class="modal fade" id="editarPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white">
+                <h4 class="modal-title titulo-centro " id="TituloModalCentralizado">Editar Postagem</h4>
+
+
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/feed']">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group">
+                    <div class="row d-flex align-items-baseline mb-0">
+                        <label for="temalink" class="col-md-2 col-form-label color mr-3">
+                            <h3 class="text-align">Tema:</h3>
+                        </label>
+
+                        <select class="col-md-8 form-control" name="idTema" id="idTema" [(ngModel)]='idTema'
+                            (change)='findByIdTema()'>
+                            <option *ngFor='let item of listaTema' value="{{item.id}}">{{item.nome}}</option>
+                        </select>
+                        <p class="ml-3">Não possui tema? <a routerLink="/tema" data-dismiss="modal">Cadastre um
+                                novo!</a></p>
+                    </div>
+
+                    <label for="descricaolink" class="col-form-label color">
+                        <h6 class="text-align">Descrição</h6>
+                    </label>
+                    <textarea [(ngModel)]="postagem.descricao" style="resize: none;" class="form-control"
+                        name="descricaolink" id="descricaolink" cols="30" rows="10"></textarea>
+                    <label for="link" class="col-form-label color">
+                        <h6 class="text-align">Link</h6>
+                    </label>
+                    <textarea [(ngModel)]="postagem.link" style="resize: none;" class="form-control" name="link"
+                        id="link" cols="30" rows="1"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal"
+                [routerLink]="['/feed']">Cancelar</button>
+                <button type="button" class="text-white btn" style="background-color:#004AAD;" (click)="editarPost()"
+                    data-dismiss="modal">Publicar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal Editar Post-->
+
+<!-- Modal Excluir Post-->
+<div class="modal fade " id="excluirPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white bordaN">
+                <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Excluir Postagem
+                </h4>
+
+
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/feed']">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <h3 class="text-center font-weight-bold color">Deseja excluir essa postagem?</h3>
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="d-flex justify-content-center mb-3 ">
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal"
+                [routerLink]="['/feed']">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
+                    data-dismiss="modal" (click)='deletarPost()'>Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal excluir tema-->

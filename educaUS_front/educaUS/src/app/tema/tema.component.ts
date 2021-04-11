@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -18,15 +19,14 @@ export class TemaComponent implements OnInit {
   constructor(
     private temaService: TemaService, 
     private router: Router,
-    private route: ActivatedRoute
-
-
+    private route: ActivatedRoute,
+    private alert: AlertasService,
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça login novamente!')
+      this.alert.showAlertInfo('Sua sessão expirou, faça login novamente!')
       this.router.navigate(['/entrar'])
     }
    
@@ -40,7 +40,7 @@ export class TemaComponent implements OnInit {
   cadastrarTema(){
     this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
       this.tema = resp
-      alert('Tema cadastrado com sucesso!')
+      this.alert.showAlertSuccess('Tema cadastrado com sucesso!')
       this.findAllTema()
       this.tema = new Tema()
       
@@ -62,7 +62,7 @@ export class TemaComponent implements OnInit {
   editarTema(){
     this.temaService.putTema(this.tema).subscribe((resp:Tema)=> {
       this.tema = resp
-      alert('Tema atualizado com sucesso!')
+      this.alert.showAlertSuccess('Tema atualizado com sucesso!')
       this.findAllTema()
       this.router.navigate(['/tema'])
     })
@@ -72,7 +72,7 @@ export class TemaComponent implements OnInit {
   let id = this.route.snapshot.params['id']
    this.findByIdTema(id)
     this.temaService.delete(id).subscribe(()=>{
-      alert('Tema deletado com sucesso!')
+      this.alert.showAlertInfo('Tema deletado com sucesso!')
       this.router.navigate(['/tema'])
     })
 
