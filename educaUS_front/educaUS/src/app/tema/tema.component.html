@@ -12,8 +12,7 @@
 
         <nav class="navbar navbar-light bg-white d-flex justify-content-center mt-2 pesquisa-barra">
             <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema"
-                    aria-label="Pesquisar">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema" aria-label="Pesquisar">
                 <button class="btn btn-primary " type="submit ">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     <span class="sinal"></span>
@@ -37,19 +36,16 @@
                     <th scope="row">{{tema.id}}</th>
                     <td>{{tema.nome}}</td>
                     <td>
-                        <div class="row">
-                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none"
-                                [routerLink]="['/tema', tema.id]">
+                        <div class="row d-flex justify-content-center ">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
                                 <div>
-                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
+                                    <i class="fa fa-pencil icons-edit-del mr-1" aria-hidden="true"></i>
                                 </div>
                             </a>
 
-                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none"
-                                [routerLink]="['/tema', tema.id]">
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
                                 <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;"
-                                        aria-hidden="true"></i>
+                                    <i class="fa fa-trash-o icons-edit-del ml-1" style="color: red;" aria-hidden="true"></i>
                                 </div>
                             </a>
                         </div>
@@ -62,8 +58,7 @@
 
 
 <!-- Modal novo tema-->
-<div class="modal fade " id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true" data-backdrop="static">
+<div class="modal fade " id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white bordaN">
@@ -81,8 +76,7 @@
                         <h3 class="text-center font-weight-bold color">Tema:</h3>
                         <div class="row d-flex justify-content-center">
                             <div class="col-sm-10">
-                                <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center"
-                                    name="nome" id="nome" placeholder="Novo tema">
+                                <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center" name="nome" id="nome" placeholder="Novo tema">
                             </div>
                         </div>
 
@@ -93,8 +87,7 @@
             </div>
             <div class="d-flex justify-content-center mb-3 ">
                 <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
-                    data-dismiss="modal" (click)="cadastrarTema()">Publicar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" data-dismiss="modal" (click)="cadastrarTema()">Publicar</button>
             </div>
         </div>
     </div>
@@ -102,8 +95,7 @@
 
 <!--/Modal novo tema-->
 <!-- Modal editar tema-->
-<div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true" data-backdrop="static">
+<div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white bordaN">
@@ -121,8 +113,7 @@
                         <h3 class="text-center font-weight-bold color">Tema:</h3>
                         <div class="row d-flex justify-content-center">
                             <div class="col-sm-10">
-                                <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center"
-                                    name="nome" id="nome">
+                                <input [(ngModel)]='tema.nome' type="text" class="form-control align-items-center" name="nome" id="nome">
                             </div>
                         </div>
 
@@ -132,10 +123,8 @@
 
             </div>
             <div class="d-flex justify-content-center mb-3 ">
-                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal"
-                [routerLink]="['/tema']">Cancelar</button>
-                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
-                    data-dismiss="modal" (click)="editarTema()">Atualizar</button>
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal" [routerLink]="['/tema']">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" data-dismiss="modal" (click)="editarTema()">Atualizar</button>
             </div>
         </div>
     </div>
@@ -143,8 +132,7 @@
 <!--/Modal editar tema-->
 
 <!-- Modal excluir tema-->
-<div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true" data-backdrop="static">
+<div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white bordaN">
@@ -173,10 +161,8 @@
 
             </div>
             <div class="d-flex justify-content-center mb-3 ">
-                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal"
-                [routerLink]="['/tema']">Cancelar</button>
-                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
-                    (click)="deleteTema()" data-dismiss="modal">Excluir</button>
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal" [routerLink]="['/tema']">Cancelar</button>
+                <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" (click)="deleteTema()" data-dismiss="modal">Excluir</button>
             </div>
         </div>
     </div>

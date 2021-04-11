@@ -79,6 +79,10 @@
     align-items: center;
 }
 
+element.style {
+    padding-right: 0%;
+}
+
 
 /* Caixas */
 
