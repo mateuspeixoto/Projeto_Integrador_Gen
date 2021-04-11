@@ -2,9 +2,8 @@
 
 .border-imgcapa {
     border: 1px solid transparent;
-    /*xandinho mexeu aqui meu parsa*/
-    height: 240px;
-    width: 1000px;
+    height: 17rem;
+    width: 100%;
 }
 
 .img-config {
