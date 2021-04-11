@@ -47,8 +47,6 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-   
-
     let id = this.route.snapshot.params['id']
     this.idUser = id
     this.findByIdUser()
@@ -163,8 +161,8 @@ export class PerfilComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem alterada com sucesso!')
+      this.findAllPostagem()  
       this.postagem = new Postagem()
-      this.findAllPostagem()   
     })
 
   }
@@ -174,8 +172,8 @@ export class PerfilComponent implements OnInit {
     this.findByIdPostagem(id)
     this.postagemService.delete(id).subscribe(() => {
       this.alert.showAlertInfo('Postagem deletada com sucesso!')
+      this.findAllPostagem()  
       this.postagem = new Postagem()
-      this.findAllPostagem()
     })
   }
 
