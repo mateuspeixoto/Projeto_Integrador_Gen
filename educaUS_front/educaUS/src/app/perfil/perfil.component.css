@@ -1,17 +1,17 @@
 /*ESTILO FOTO PERFIL, FOTO CAPA E INFORMAÇÕES PERFIL*/
 
-.border-imgcapa{
-    border: 1px solid transparent;  /*xandinho mexeu aqui meu parsa*/
+.border-imgcapa {
+    border: 1px solid transparent;
+    /*xandinho mexeu aqui meu parsa*/
     height: 240px;
     width: 1000px;
-
 }
 
 .img-config {
     width: 100%;
     height: 17rem;
     border-bottom: 1px solid #acb1b9;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 #perfil {
@@ -22,7 +22,7 @@
     margin-left: 1.25rem;
     margin-bottom: 1.25rem;
     border: 2px solid #004AAD;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 
@@ -134,7 +134,7 @@ a {
     border-bottom: 1px solid #acb1b9;
     margin-top: 1.5rem;
     margin-left: 0.5rem;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 #dropdownMenuButton {

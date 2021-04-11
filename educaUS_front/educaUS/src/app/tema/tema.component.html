@@ -1,83 +1,157 @@
 <div class="container">
-    <div class="row d-flex justify-content-center">
+    <div class="caixa-um mt-4">
+        <h2 class="d-flex justify-content-center mt-3">Temas</h2>
 
-        <div class="">
-            <div class="d-flex justify-content-center p-0">
+        <div>
+            <a href="" data-toggle="modal" data-target="#novoTema" style="text-decoration:none">
+                <div class="d-flex justify-content-center ">
+                    <i class="fa fa-plus icon-nv-tema mt-4" aria-hidden="true"></i>
+                </div>
+            </a>
+        </div>
 
-                <div class="caixa-post col-md-12 pesquisa">
-                    <div class="mt-4">
+        <nav class="navbar navbar-light bg-white d-flex justify-content-center mt-2 pesquisa-barra">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema" aria-label="Pesquisar">
+                <button class="btn btn-primary " type="submit ">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <span class="sinal"></span>
+                </button>
+            </form>
+        </nav>
 
-                        <div>
-                            <h2 class="d-flex justify-content-center">Temas</h2>
-                        </div>
+    </div>
 
+    <div class="caixa-dois text-center" style=" height: 300px; overflow: auto;">
+        <table class="table table-hover table-light mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Tema #1</th>
+                    <td>Categoria #1</td>
+                    <td>
+                        <div class="row">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div>
+                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
+                                </div>
+                            </a>
 
-                        <div class=" row d-flex justify-content-center">
-                            <a href="" data-toggle="modal" data-target="#novoTema" style="text-decoration:none">
-                                <div class="d-flex justify-content-center ">
-                                    <i class="fa fa-plus icon-nv-tema mt-4" aria-hidden="true"></i>
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div class="mr-1">
+                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
                                 </div>
                             </a>
                         </div>
-
-                        <nav class="navbar navbar-light bg-white d-flex justify-content-center mt-2 pesquisa-barra">
-                            <form class="form-inline">
-
-                                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema" aria-label="Pesquisar">
-
-                            </form>
-                        </nav>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-center p-0 tab-temas">
-
-        <div class="d-flex justify-content-center">
-            <div class="caixa-perfil-2 p-5 mt-3 d-flex justify-content-center" style=" height: 400px; overflow: auto;">
-                <table class="table table-hover table-light mt-6 mb-2">
-                    <thead>
-                        <tr class="">
-                            <th scope="col">
-                                <h4 class="d-flex justify-content-center">Tema</h4>
-                            </th>
-                            <th scope="col">
-                                <h4 class="d-flex justify-content-center">Descrição</h4>
-                            </th>
-                            <th scope="col">
-                                <h4 class="d-flex justify-content-center">Alteração</h4>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor='let tema of listaTema'>
-                            <td class="text-center">{{tema.id}}</td>
-                            <td class="text-center">#{{tema.nome}}</td>
-                            <td>
-                                <div class="row d-flex justify-content-center">
-                                    <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                        <div>
-                                            <i class="fa fa-pencil icons-edit-del text-center mr-5 " aria-hidden="true"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                        <div class="mr-1">
-                                            <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                        </div>
-                                    </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Tema #2</th>
+                    <td>Categoria #2</td>
+                    <td>
+                        <div class="row">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div>
+                                    <i class="fa fa-pencil icons-edit-del text-center ml-5 " aria-hidden="true"></i>
                                 </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                            </a>
+
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div class="mr-1">
+                                    <i class="fa fa-trash-o icons-edit-del ml-2 " style="color: red;" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Tema #3</th>
+                    <td>@twitter</td>
+                    <td>
+                        <div class="row">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div>
+                                    <i class="fa fa-pencil icons-edit-del text-center ml-5" aria-hidden="true"></i>
+                                </div>
+                            </a>
+
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div class="mr-1">
+                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Tema #1</th>
+                    <td>Categoria #1</td>
+                    <td>
+                        <div class="row">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div>
+                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
+                                </div>
+                            </a>
+
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div class="mr-1">
+                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Tema #1</th>
+                    <td>Categoria #1</td>
+                    <td>
+                        <div class="row">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div>
+                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
+                                </div>
+                            </a>
+
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div class="mr-1">
+                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Tema #1</th>
+                    <td>Categoria #1</td>
+                    <td>
+                        <div class="row">
+                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div>
+                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
+                                </div>
+                            </a>
+
+                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
+                                <div class="mr-1">
+                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -119,7 +193,6 @@
 </div>
 
 <!--/Modal novo tema-->
-
 <!-- Modal editar tema-->
 <div class="modal fade " id="editarTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -195,134 +268,3 @@
     </div>
 </div>
 <!-- /Modal excluir tema-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--versão1.0 feed
-
-
-<div class="container-fluid mt-5">
-    <div class="row">
-
-        <div class="col-md-3 barra ml-3" id="coluna1">
-
-            <div class="col-md-12">
-                <div class="caixa-perfil barra d-flex justify-content-center align-items-baseline">
-                    <div>
-                        <img src="../../assets/img/perfil.png" class="img-feed" id="perfil2" alt="">
-                    </div>
-                </div>
-
-
-                <div class="col-md-12">
-                    <div>
-                        <p>nome</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>  -->
-<!-- 
-
-
-
-
-
-  </div>
-
-
-        <div class="col-md-6 ">
-            <div class="postagem-feed d-flex ">
-
-
-                <div class="col-md-2 d-flex align-items-center ml-3 ">
-
-                    <img src="../../assets/img/perfil.png" class="img-feed" id="perfil" alt="">
-
-                </div>
-                <div class="col-md-10 d-flex align-items-center ">
-
-                    <a href="" class="texto">
-                        <div class="publicacao">
-
-                            <p class="mt-2 ml-3 text-muted ">Qualquer coisa</p>
-
-                        </div>
-                        <hr class="mt-3">
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-            <div class="caixa-feed mt-3">
-
-            </div>
-
-        </div>
-
-        <div class="col-md-3">
-
-                    <div class="publicacao">
-                        <a href="">
-                            <p class="mt-2 ml-3 text-muted ">Qualquer coisa</p>
-                        </a>
-                    </div>
-                    <hr class="mt-3">
-                </div>
-            </div>
-
-            <div class="ml-5 caixa-feed mt-3 d-flex ">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim sunt eaque optio tempora cumque,
-                    corporis saepe tempore quaerat ipsam. Ea sunt perferendis sapiente esse doloribus quod sed
-                    aspernatur fugiat ipsam?
-                </p>
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-
-</div>
-
--->
