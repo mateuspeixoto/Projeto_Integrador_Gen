@@ -26,130 +26,31 @@
         <table class="table table-hover table-light mt-3">
             <thead>
                 <tr>
+                    <th scope="col">#</th>
                     <th scope="col">Descrição</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col"></th>
+                    <th scope="col">Alterações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">Tema #1</th>
-                    <td>Categoria #1</td>
+                <tr *ngFor='let tema of listaTema'>
+                    <th scope="row">{{tema.id}}</th>
+                    <td>{{tema.nome}}</td>
                     <td>
-                        <div class="row">
+                        <div class="row d-flex justify-content-center ">
                             <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
                                 <div>
-                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
+                                    <i class="fa fa-pencil icons-edit-del mr-1" aria-hidden="true"></i>
                                 </div>
                             </a>
 
                             <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
                                 <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
+                                    <i class="fa fa-trash-o icons-edit-del ml-1" style="color: red;" aria-hidden="true"></i>
                                 </div>
                             </a>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">Tema #2</th>
-                    <td>Categoria #2</td>
-                    <td>
-                        <div class="row">
-                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div>
-                                    <i class="fa fa-pencil icons-edit-del text-center ml-5 " aria-hidden="true"></i>
-                                </div>
-                            </a>
-
-                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2 " style="color: red;" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Tema #3</th>
-                    <td>@twitter</td>
-                    <td>
-                        <div class="row">
-                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div>
-                                    <i class="fa fa-pencil icons-edit-del text-center ml-5" aria-hidden="true"></i>
-                                </div>
-                            </a>
-
-                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Tema #1</th>
-                    <td>Categoria #1</td>
-                    <td>
-                        <div class="row">
-                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div>
-                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
-                                </div>
-                            </a>
-
-                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Tema #1</th>
-                    <td>Categoria #1</td>
-                    <td>
-                        <div class="row">
-                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div>
-                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
-                                </div>
-                            </a>
-
-                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Tema #1</th>
-                    <td>Categoria #1</td>
-                    <td>
-                        <div class="row">
-                            <a href="" data-toggle="modal" data-target="#editarTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div>
-                                    <i class="fa fa-pencil icons-edit-del ml-5" aria-hidden="true"></i>
-                                </div>
-                            </a>
-
-                            <a href="" data-toggle="modal" data-target="#excluirTema" style="text-decoration:none" [routerLink]="['/tema', tema.id]">
-                                <div class="mr-1">
-                                    <i class="fa fa-trash-o icons-edit-del ml-2" style="color: red;" aria-hidden="true"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
             </tbody>
         </table>
     </div>
@@ -165,8 +66,8 @@
 
 
                 <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <form>
@@ -201,9 +102,9 @@
                 <h4 class="modal-title titulo-centro font-weight-bold" id="TituloModalCentralizado">Editar Tema</h4>
 
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/tema']">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <form>
@@ -222,14 +123,13 @@
 
             </div>
             <div class="d-flex justify-content-center mb-3 ">
-                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal" [routerLink]="['/tema']">Cancelar</button>
                 <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" data-dismiss="modal" (click)="editarTema()">Atualizar</button>
             </div>
         </div>
     </div>
 </div>
 <!--/Modal editar tema-->
-
 
 <!-- Modal excluir tema-->
 <div class="modal fade " id="excluirTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
@@ -240,9 +140,9 @@
                 </h4>
 
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/tema']">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <form>
@@ -261,7 +161,7 @@
 
             </div>
             <div class="d-flex justify-content-center mb-3 ">
-                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal" [routerLink]="['/tema']">Cancelar</button>
                 <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;" (click)="deleteTema()" data-dismiss="modal">Excluir</button>
             </div>
         </div>
