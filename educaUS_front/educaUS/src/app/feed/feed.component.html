@@ -29,23 +29,21 @@
             </div>
 
             <div class="text-center box p-3 mt-3 flex-column" id="meusTemas">
-                <h5 class="">Meus temas #2</h5>
+                <h5 class="">Meus temas</h5>
                 <hr>
                 <div>
-                <p><a href="">#robotica</a></p>
+                <p><a routerLink="/tema">#robotica</a></p>
 
-                <p> <a href="">#programação</a></p>
+                <p> <a routerLink="/tema">#programação</a></p>
 
-                <p><a href="">#ediçãodevideos</a></p>
+                <p><a routerLink="/tema">#ediçãodevideos</a></p>
 
-                <p><a href="">#ingles</a></p>
+                <p><a routerLink="/tema">#ingles</a></p>
                 </div>
 
             </div>
         </div>
         <!--/PERFIL FEED-->
-
-
 
         <!--NOVO POST-->
 
@@ -57,50 +55,37 @@
                     <div class="publicacao">
                         <a data-toggle="modal" data-target="#novoPost" style="text-decoration:none">
                             <div class="ml-2">
-
                                 <p class="text-muted line">Novo Post</p>
-
                             </div>
                         </a>
-
-
                     </div>
-
                     <div class="d-flex justify-content-around">
-
                         <a class="h-link" data-toggle="modal" data-target="#novoPost">
                             <div class="row mt-3"><img src="../../assets/img/artigoicon.png" class="artigo-icon" alt="">
                                 <p class="mt-2  ml-2 cb" style="font-weight: bold;opacity: 44%;">Artigo</p>
                             </div>
                         </a>
-
                         <a class="h-link" data-toggle="modal" data-target="#novoPostLink">
                             <div class="row mt-3"><i class="fa fa-link link-icon" aria-hidden="true"></i>
                                 <p class="mt-2 ml-1 cb" style="font-weight: bold;opacity: 44%;">Link</p>
                             </div>
                         </a>
-
-
                     </div>
                 </div>
                 <hr class="mt-3">
             </div>
-
-
             <hr>
-
             <!--minha postagem-->
-
             <div>
                 <div class="d-flex flex-column justify-content-center">
-                    <div class="box mt-3 d-flex flex-column justify-content-center" *ngFor='let post of listaPostagem | orderBy : key : reverse'>
+                    <div class="box mt-3 d-flex flex-column justify-content-center"
+                        *ngFor='let post of listaPostagem | orderBy : key : reverse'>
                         <div>
                             <div class="d-flex ">
                                 <img src="{{post.usuario.fotoPerfil}}" class="img-feed" id="perfil" alt="">
                                 <div class="div-nome">
                                     <a class="h-link" [routerLink]="['/perfil', post.usuario.id]">
                                         <h5 class="mt-4 ml-2 mb-0 font-nome color">{{post.usuario.nome}}</h5>
-
                                     </a>
                                     <span class="text-muted ml-2 ">(@{{post.usuario.nomeUsuario}})</span>
                                     <div class="mb-3">
@@ -108,7 +93,6 @@
                                             {{post.postdate | date:'HH:mm'}}
                                         </span>
                                     </div>
-
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-end margin-left mr-3 mb-0"
@@ -125,8 +109,6 @@
                                             <i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                         <h5 class="ml-4">#{{post.temas.nome}}</h5>
@@ -142,7 +124,7 @@
                             <div class="d-flex">
                                 <div class="ml-4 d-flex justify-content-start">
                                     <div class="ml-4 mr-4">
-                                        <p>Referência: <a href="{{post.link}}">{{post.link}}</a> </p>
+                                        <p>Referência: <a href="{{post.link}}" target="blank">{{post.link}}</a> </p>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +141,7 @@
                 <p>Pesquisa</p>
                 <form class="my-2">
                     <input class=" form-control mr-sm-2 " type="search " placeholder="Encontre..."
-                        aria-label="Pesquisar">
+                        aria-label="Pesquisar" [(ngModel)]="descricaoPost" (keyup)='finByTituloPostagem()'>
                 </form>
 
             </div>
@@ -173,13 +155,8 @@
 
 
         </div>
-
     </div>
-
-
 </div>
-
-
 <!-- Modal Novo Post-->
 <div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true" data-backdrop="static">
@@ -353,7 +330,8 @@
                 <h4 class="modal-title titulo-centro " id="TituloModalCentralizado">Editar Postagem</h4>
 
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/feed']">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar"
+                    [routerLink]="['/feed']">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -386,7 +364,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal"
-                [routerLink]="['/feed']">Cancelar</button>
+                    [routerLink]="['/feed']">Cancelar</button>
                 <button type="button" class="text-white btn" style="background-color:#004AAD;" (click)="editarPost()"
                     data-dismiss="modal">Publicar</button>
             </div>
@@ -405,7 +383,8 @@
                 </h4>
 
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/feed']">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar"
+                    [routerLink]="['/feed']">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -421,11 +400,11 @@
             </div>
             <div class="d-flex justify-content-center mb-3 ">
                 <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal"
-                [routerLink]="['/feed']">Cancelar</button>
+                    [routerLink]="['/feed']">Cancelar</button>
                 <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
                     data-dismiss="modal" (click)='deletarPost()'>Excluir</button>
             </div>
         </div>
     </div>
 </div>
-<!-- /Modal excluir tema-->
+<!-- /Modal Excluir Post-->

@@ -12,8 +12,8 @@
 
         <nav class="navbar navbar-light bg-white d-flex justify-content-center mt-2 pesquisa-barra">
             <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema" aria-label="Pesquisar">
-                <button class="btn btn-primary " type="submit ">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um tema" aria-label="Pesquisar" [(ngModel)]="nomeTema">
+                <button class="btn btn-primary " type="submit " (click)='finByNomeTema()'>
                     <i class="fa fa-search" aria-hidden="true"></i>
                     <span class="sinal"></span>
                 </button>

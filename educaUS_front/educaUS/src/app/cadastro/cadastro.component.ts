@@ -35,14 +35,34 @@ export class CadastroComponent implements OnInit {
 
     if (this.user.nomeUsuario.length < 5) {
       usuario = false
-      this.alert.showAlertDanger('Nome de usuario inválido! Insira no minimo 5 caracteres!')
-    }
+      this.alert.showAlertDanger('Nome de usuário inválido! Insira no minimo 5 caracteres!')
 
+      if (this.user.nome.length < 3) {
+        this.alert.showAlertDanger('Nome inválido! Insira no minimo 3 caracteres!')
+       
+      if (this.user.email.indexOf('@')  == -1 || this.user.email.indexOf('.com') == -1 ){
+        email = false 
+        this.alert.showAlertDanger('Email inválido! Formato: name@example.com')
+      
+        if (this.user.senha != this.confirmSenha) {
+          this.alert.showAlertDanger('As senhas não coincidem!')
+        }   
+            
+      }
+
+    }
+     
+  }
+    
     else if (this.user.email.indexOf('@')  == -1 || this.user.email.indexOf('.com') == -1 ){
       email = false 
       this.alert.showAlertDanger('Email inválido!')
-    }
+   
+      if (this.user.senha != this.confirmSenha) {
+        this.alert.showAlertDanger('As senhas não coincidem!')
+      }
 
+    }
 
     else if (this.user.senha != this.confirmSenha) {
       this.alert.showAlertDanger('As senhas não coincidem!')

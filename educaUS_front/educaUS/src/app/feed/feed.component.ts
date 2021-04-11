@@ -30,6 +30,7 @@ export class FeedComponent implements OnInit {
   listaPostagem: Postagem[]
   key= 'postdate'
   reverse = true
+  descricaoPost: string
 
   constructor(
     private router: Router,
@@ -177,6 +178,16 @@ export class FeedComponent implements OnInit {
     this.findAllPostagem()
     this.router.navigate(['/feed'])
     })
+  }
+
+  finByTituloPostagem(){
+    if(this.descricaoPost == ''){
+      this.findAllPostagem
+    } else {
+      this.postagemService.getByDescricaoPostagem(this.descricaoPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagem = resp
+      })
+    }
   }
 
 }

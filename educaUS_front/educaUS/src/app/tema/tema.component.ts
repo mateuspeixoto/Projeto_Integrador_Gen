@@ -15,6 +15,7 @@ export class TemaComponent implements OnInit {
     tema: Tema = new Tema()
     listaTema: Tema[]  
     idTema: number
+    nomeTema: string
     
   constructor(
     private temaService: TemaService, 
@@ -77,6 +78,16 @@ export class TemaComponent implements OnInit {
       this.tema = new Tema()
     })
 
+  }
+
+  finByNomeTema(){
+    if(this.nomeTema == ''){
+      this.findAllTema()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[])=>{
+        this.listaTema = resp
+      })
+    }
   }
 
 }
