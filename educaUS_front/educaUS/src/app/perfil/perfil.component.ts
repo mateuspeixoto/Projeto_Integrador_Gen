@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -15,17 +16,19 @@ import { TemaService } from '../service/tema.service';
 })
 export class PerfilComponent implements OnInit {
 
-user: User = new User()
-tema: Tema = new Tema()
-postagem: Postagem = new Postagem()
-idUser: number
-confirmSenha: string
-postagemUser: Postagem[]
-listaPostagem: Postagem[]
-idActive = environment.id
-idTema: number
-idPost: number
-listaTema: Tema[]
+  user: User = new User()
+  tema: Tema = new Tema()
+  postagem: Postagem = new Postagem()
+  idUser: number
+  confirmSenha: string
+  postagemUser: Postagem[]
+  listaPostagem: Postagem[]
+  idActive = environment.id
+  idTema: number
+  idPost: number
+  listaTema: Tema[]
+  key= 'postdate'
+  reverse = true
 
 
   constructor(
@@ -34,14 +37,17 @@ listaTema: Tema[]
     private temaService: TemaService,
     private postagemService: PostagemService,
     private authService: AuthService,
+    private alert: AlertasService,
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça login novamente!')
+      this.alert.showAlertInfo('Sua sessão expirou, faça login novamente!')
       this.router.navigate(['/entrar'])
     }
+
+   
 
     let id = this.route.snapshot.params['id']
     this.idUser = id
@@ -53,8 +59,8 @@ listaTema: Tema[]
 
   }
 
-  findByIdUser(){
-    this.authService.getByIdUser(this.idUser).subscribe((resp: User)=>{
+  findByIdUser() {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
   }
@@ -76,23 +82,23 @@ listaTema: Tema[]
 
     if (this.user.nomeUsuario.length < 5) {
       usuario = false
-      alert('Nome de usuario inválido! Insira no minimo 5 caracteres!')
+      this.alert.showAlertDanger('Nome de usuario inválido! Insira no minimo 5 caracteres!')
     }
 
     else if (this.user.email.indexOf('@') == -1 || this.user.email.indexOf('.com') == -1) {
       email = false
-      alert('Email inválido!')
+      this.alert.showAlertDanger('Email inválido!')
     }
 
     else if (this.user.senha != this.confirmSenha) {
-      alert('As senhas não coincidem!')
+      this.alert.showAlertDanger('As senhas não coincidem!')
     }
 
     else {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/entrar'])
-        alert('Usuario atualizado com sucesso! Faça login novamente')
+        this.alert.showAlertSuccess('Usuario atualizado com sucesso! Faça login novamente')
         environment.token = ''
         environment.id = 0
         environment.fotoCapa = ''
@@ -105,9 +111,9 @@ listaTema: Tema[]
 
   }
 
-   /*METODOS TEMA*/
+  /*METODOS TEMA*/
 
-   findByIdTema() {
+  findByIdTema() {
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
       this.tema = resp
     })
@@ -139,38 +145,37 @@ listaTema: Tema[]
     this.user.id = this.idUser
     this.postagem.usuario = this.user
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
-      this.findAllPostagem()
+      this.alert.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
+      this.findAllPostagem()
     })
 
   }
 
-  editarPost(){
+  editarPost() {
     this.tema.id = this.idTema
     this.postagem.temas = this.tema
     this.user.id = this.idUser
     this.postagem.usuario = this.user
-    
-    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
+
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem alterada com sucesso!')
+      this.alert.showAlertSuccess('Postagem alterada com sucesso!')
       this.postagem = new Postagem()
-      this.findAllPostagem()
-      
+      this.findAllPostagem()   
     })
 
   }
 
-  deletarPost(){
+  deletarPost() {
     let id = this.route.snapshot.params['id']
     this.findByIdPostagem(id)
-    this.postagemService.delete(id).subscribe(()=>{
-    alert('Postagem deletada com sucesso!')
-    this.postagem = new Postagem()
-    this.findAllPostagem()
+    this.postagemService.delete(id).subscribe(() => {
+      this.alert.showAlertInfo('Postagem deletada com sucesso!')
+      this.postagem = new Postagem()
+      this.findAllPostagem()
     })
   }
 

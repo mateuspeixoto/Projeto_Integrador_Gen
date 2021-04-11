@@ -11,7 +11,7 @@
                         <img src="{{user.fotoCapa}}" class="img-fluid img-config rounded" alt="Imagem de Capa">
                     </div>
                     <div>
-                        <img src="{{user.fotoPerfil}}" class="img-fluid " id="perfil" alt="">
+                        <img src="{{user.fotoPerfil}}" class="img-fluid" id="perfil" alt="">
                     </div>
                 </div>
             </div>
@@ -86,7 +86,8 @@
                 <!--MINHAS POSTAGENS-->
 
                 <div class="row">
-                    <div class="col-md-12 ml-3 mt-3 caixa-feed" *ngFor='let post of user.postagem'>
+                    <div class="col-md-12 ml-3 mt-3 caixa-feed"
+                        *ngFor='let post of user.postagem | orderBy : key : reverse'>
                         <div class=" d-flex flex-column">
 
                             <!--INFORMAÇÕES USER E DATA-->
@@ -105,14 +106,18 @@
 
                                 <!--DROP DAS POSTAGENS EDITAR E APAGAR-->
 
-                                <div class="d-flex align-items-center justify-content-end margin-left ml-4 mb-0" *ngIf="idUser == idActive">
+                                <div class="d-flex align-items-center justify-content-end margin-left ml-4 mb-0"
+                                    *ngIf="idUser == idActive">
                                     <i class="fa fa-ellipsis-h" id="dropdownMenuButton" aria-hidden="true"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         aria-hidden="true"></i>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#excluirPost" [routerLink]="['/perfil', post.id]"> Apagar
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#excluirPost"
+                                            [routerLink]="['/perfil', post.id]"> Apagar
                                             <i class="fa fa-trash" aria-hidden="true"></i></a>
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#editarPost" [routerLink]="['/perfil', post.id]" (click)="findByIdPostagem(post.id)">Editar
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#editarPost"
+                                            [routerLink]="['/perfil', post.id]"
+                                            (click)="findByIdPostagem(post.id)">Editar
                                             <i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
@@ -286,7 +291,8 @@
                 <h4 class="modal-title titulo-centro " id="TituloModalCentralizado">Editar Postagem</h4>
 
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/perfil', user.id]">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar"
+                    [routerLink]="['/perfil', user.id]">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -319,7 +325,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal"
-                [routerLink]="['/perfil', user.id]">Cancelar</button>
+                    [routerLink]="['/perfil', user.id]">Cancelar</button>
                 <button type="button" class="text-white btn" style="background-color:#004AAD;" (click)="editarPost()"
                     data-dismiss="modal">Alterar</button>
             </div>
@@ -338,7 +344,8 @@
                 </h4>
 
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/perfil', user.id]">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar"
+                    [routerLink]="['/perfil', user.id]">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -354,7 +361,7 @@
             </div>
             <div class="d-flex justify-content-center mb-3 ">
                 <button type="button" class="btn btn-danger mr-4 btn-lg modalB" data-dismiss="modal"
-                [routerLink]="['/perfil', user.id]">Cancelar</button>
+                    [routerLink]="['/perfil', user.id]">Cancelar</button>
                 <button type="button" class="text-white btn btn-lg modalB" style="background-color:#004AAD;"
                     data-dismiss="modal" (click)='deletarPost()'>Excluir</button>
             </div>
