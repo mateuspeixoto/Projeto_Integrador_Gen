@@ -1,17 +1,17 @@
 <div class="container font">
 
 
-    <div class="row d-flex justify-content-around flex-nowrap">
+    <div class="row justify-content-around flex-nowrap">
 
         <!--PERFIL FEED-->
-        <div class="col-md-2 p-0 d-flex flex-column ml-2">
-            <div class="box d-flex justify-content-start flex-column align-items-center">
+        <div class="col-md-3 ml-2">
+            <div class="box d-flex justify-content-start flex-column align-items-center" id="boxPerfil">
 
-                <div>
+                <div id="divPerfil">
                     <img src="{{fotoPerfil}}" class="img-feed" id="perfil2" alt="">
                 </div>
 
-                <div class="mt-3 text-center">
+                <div class="mt-3 text-center" id="desUser">
 
                     <a class="h-link" [routerLink]="['/perfil', user.id]">
                         <h5 class="font-nome color">{{nome}}</h5>
@@ -28,25 +28,27 @@
 
             </div>
 
-            <div class="text-center box p-3 mt-3 flex-column">
-                <h5 class="">Meus temas #2</h5>
+            <div class="text-center box p-3 mt-3 flex-column" id="meusTemas">
+                <h5 class="">Meus temas</h5>
                 <hr>
+                <div>
+                <p><a routerLink="/tema">#robotica</a></p>
 
-                <p><a href="">#robotica</a></p>
+                <p> <a routerLink="/tema">#programação</a></p>
 
-                <p> <a href="">#programação</a></p>
+                <p><a routerLink="/tema">#ediçãodevideos</a></p>
 
-                <p><a href="">#ediçãodevideos</a></p>
-
-                <p><a href="">#ingles</a></p>
-
+                <p><a routerLink="/tema">#ingles</a></p>
+                </div>
 
             </div>
         </div>
         <!--/PERFIL FEED-->
 
         <!--NOVO POST-->
-        <div class="col-md-6 p-0 d-flex flex-column justify-content-center">
+
+
+        <div class="col-md-6">
             <div class="box d-flex">
                 <img src="{{fotoPerfil}}" class="img-feed img-fluid" id="perfil" alt="">
                 <div class="mt-3 texto padding">
@@ -81,7 +83,7 @@
                         <div>
                             <div class="d-flex ">
                                 <img src="{{post.usuario.fotoPerfil}}" class="img-feed" id="perfil" alt="">
-                                <div class="mr-5">
+                                <div class="div-nome">
                                     <a class="h-link" [routerLink]="['/perfil', post.usuario.id]">
                                         <h5 class="mt-4 ml-2 mb-0 font-nome color">{{post.usuario.nome}}</h5>
                                     </a>
@@ -92,7 +94,8 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-end margin-left ml-5 mb-0"
+
+                                <div class="d-flex align-items-center justify-content-end margin-left mr-3 mb-0"
                                     *ngIf="post.usuario.id == idUser">
                                     <i class="fa fa-ellipsis-h" id="dropdownMenuButton" aria-hidden="true"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -130,13 +133,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 p-0 d-flex flex-column">
+
+
+        <div class="col-md-3">
 
             <div class="text-center box p-3 flex-column">
                 <p>Pesquisa</p>
-                <form class="form-inline my-2">
+                <form class="my-2">
                     <input class=" form-control mr-sm-2 " type="search " placeholder="Encontre..."
-                        aria-label="Pesquisar">
+                        aria-label="Pesquisar" [(ngModel)]="descricaoPost" (keyup)='finByTituloPostagem()'>
                 </form>
 
             </div>
