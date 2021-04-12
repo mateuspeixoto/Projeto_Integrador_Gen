@@ -14,6 +14,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { DiretrizesComponent } from './diretrizes/diretrizes.component';
 import { BarrasupComponent } from './barrasup/barrasup.component';
 import { TemaComponent } from './tema/tema.component';
+import { Landing2Component } from './landing2/landing2.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -30,6 +32,7 @@ import { TemaComponent } from './tema/tema.component';
     DiretrizesComponent,
     BarrasupComponent,
     TemaComponent,
+    Landing2Component,
     
     
 
@@ -38,7 +41,8 @@ import { TemaComponent } from './tema/tema.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
     
   ],
   providers: [],

@@ -1,3 +1,26 @@
+.margin{
+    margin:10px 2px 5px;
+}
+
+.gradiente{
+    background-color: linear-gradient(#006dadf6, #004AAD);
+}
+
+#grad {
+    background-image: linear-gradient(rgb(0, 109, 173),rgb(0, 74, 173));
+  }
+  
+
+
+  .logo{
+    width: 10vh;
+ 
+    padding-top: 3px;
+    object-fit: cover;
+
+  }
+
+/*
 .logo{
     width: 100px;
     height:100px;
@@ -18,3 +41,4 @@ footer a:hover{
     color: #000;   
 }
 
+*/

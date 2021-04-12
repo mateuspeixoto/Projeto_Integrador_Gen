@@ -13,6 +13,7 @@
     border-bottom: 1px solid #acb1b9;
     margin-top: 1.5rem;
     margin-left: 1.5rem;
+    object-fit: cover;
 }
 
 .barra {

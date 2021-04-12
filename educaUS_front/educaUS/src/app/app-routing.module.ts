@@ -7,11 +7,9 @@ import { DiretrizesComponent } from './diretrizes/diretrizes.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { LandingComponent } from './landing/landing.component';
+import { Landing2Component } from './landing2/landing2.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { TemaComponent } from './tema/tema.component';
-
-
-
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -37,6 +35,8 @@ const routes: Routes = [
   {path:'perfil/:id',component:PerfilComponent},
 
   {path:'diretrizes',component:DiretrizesComponent},
+
+  {path:'landing2', component:Landing2Component}
 
 
 
