@@ -11,6 +11,7 @@ import { OrderModule } from 'ngx-order-pipe';
 
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+
 import { EntrarComponent } from './entrar/entrar.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { FeedComponent } from './feed/feed.component';
