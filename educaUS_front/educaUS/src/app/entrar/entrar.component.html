@@ -4,12 +4,13 @@
     <div class="row d-flex align-items-center">
        
        <!--IMAGEM LOGO DA PÁGINA-->
-        <div class=" col-md-6" style="background-image: url(../../assets/img/Educa\ Us\ 1PDF.png);" id="background-config" >
+        <div class=" col-md-6 logo" >
+            <img src="../../assets/img/Educa Us 1PDF.png"  id="background-config" class="img-fluid" alt="">
         </div>
         
         <div class="col-md-6 linha-vertical">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
+            <div class="d-flex justify-content-center">
+                <div class="w-90">
                     <h1 class="text-center mb-6 justify-content-center font">Entrar</h1>
                     
                     <!--FORMULÁRIO DE LOGIN-->
@@ -17,7 +18,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1" >Usuário</label>
 
-                            <input [(ngModel)]='userLogin.nomeUsuario' name='nomeUsuario' type="nomeUsuario" class="form-control" id="nomeUsuario"
+                            <input [(ngModel)]='userLogin.nomeUsuario' name='nomeUsuario' type="text" class="form-control" id="nomeUsuario"
                                 aria-describedby="nomeUsuarioHelp" placeholder="Insira seu nome de usuário">
                         </div>
                         <div class="form-group">

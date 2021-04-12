@@ -9,7 +9,8 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class BarrasupComponent implements OnInit {
 
-      token = environment.token
+  token = environment.token
+  idUser = environment.id
 
 
   constructor( private router:Router) { }

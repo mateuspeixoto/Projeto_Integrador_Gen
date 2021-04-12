@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OrderModule } from 'ngx-order-pipe';
+
 
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { LandingComponent } from './landing/landing.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { FeedComponent } from './feed/feed.component';
@@ -15,7 +19,8 @@ import { DiretrizesComponent } from './diretrizes/diretrizes.component';
 import { BarrasupComponent } from './barrasup/barrasup.component';
 import { TemaComponent } from './tema/tema.component';
 import { Landing2Component } from './landing2/landing2.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 
 
 
@@ -24,7 +29,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     AppComponent,
     CadastroComponent,
-    LandingComponent,
     EntrarComponent,
     RodapeComponent,
     FeedComponent,
@@ -33,6 +37,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BarrasupComponent,
     TemaComponent,
     Landing2Component,
+    AlertasComponent,
     
     
 
@@ -42,7 +47,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    OrderModule,
+    ModalModule.forRoot()
     
   ],
   providers: [],

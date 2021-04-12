@@ -1,93 +1,7 @@
-.postagem-feed {
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    height: 200px;
-    width: 800px;
-    background-color: white;
-}
+/* Estilização - Botões */
 
-.img-feed {
-    border-radius: 100%;
-    width: 4rem;
-    height: 4rem;
-    border-bottom: 1px solid #acb1b9;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-}
-
-.barra {
-    height: 650px;
-    width: 200px;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    background-color: white;
-}
-
-.caixa-feed {
-    height: 100%;
-    width: 41rem;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    background-color: white;
-}
-
-.text-area {
-    left: 300px;
-    right: 5px;
-    top: 5px;
-    bottom: 5px;
-}
-
-.publicacao {
-    height: 3rem;
-    width: 33rem;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-}
-
-.teste {
-    border: 1px solid red;
-}
-
-.texto {
-    text-decoration: none;
-}
-
-.caixa-perfil {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 50%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 1rem 1rem 1rem 1rem;
-}
-
-.caixa-perfil-2 {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 1rem 1rem 1rem 1rem;
-}
-
-#perfil2 {
-    height: 7rem;
-    width: 7rem;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-}
-
-.padding {
-    padding: 1rem;
-}
-
-.caixa-post {
-    height: 11rem;
-    width: 65%;
-    border: 2px solid #acb1b9;
-    border-radius: 1rem 1rem 1rem 1rem;
-    background-color: white;
-    margin-top: 2rem;
+.btn-primary {
+    background-color: #004AAD;
 }
 
 .tm-icon {
@@ -95,70 +9,22 @@
     width: 10rem;
 }
 
-.titulo-centro {
-    margin-left: 31%;
-}
-
 .fa {
     color: rgba(47, 161, 255, 0.555);
 }
 
-.caixa-anuncio {
-    margin-top: 20px;
-    border: 2px solid #acb1b9;
-    height: 50%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
-}
-
-.caixa-direita {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 40%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
-}
-
-.anuncio {
-    margin-top: 20px;
-    width: 100%;
-    border-radius: 10px 10px 10px 10px;
-}
-
-.img-feed2 {
-    border-radius: 100%;
-    width: 4.5rem;
-    height: 4.5rem;
-    border-bottom: 1px solid #acb1b9;
-    margin-top: 1.5rem;
-    margin-left: 0.5rem;
-}
-
-.artigo-icon {
-    height: 2rem;
-    width: 2rem;
-}
-
-.link-icon {
-    font-size: 2rem;
-    color: #000000;
-}
-
 .icons-edit-del {
     font-size: 1.5rem;
+    color: #004AAD;
+}
+
+.icon-nv-tema {
+    font-size: 3rem;
     color: #004AAD
 }
 
-.cor-tema {
-    color: #acb1b9;
-}
 
-.titulo-centro {
-    margin-left: 31%;
-    font-size: 25pt;
-}
+/* Estilização - Modais */
 
 .modalB {
     width: 200px;
@@ -173,27 +39,63 @@
     margin-right: 12rem;
 }
 
-.btn-outline-secondary:hover {
-    background-color: #acb1b9;
-    transition: all 1s;
-    border-bottom-left-radius: 100%;
-    border-bottom-right-radius: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    height: 6rem;
-    width: auto;
+.fa-search {
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #004AAD;
 }
 
-.table-overflow {
-    max-height: 250px;
-    overflow-y: auto;
+.titulo-centro {
+    margin-left: 31%;
+    font-size: 25pt;
 }
 
-.mt-6 {
-    margin-top: 6rem;
+
+/* Responsividade */
+
+@media (max-width: 575.00px) {
+    .posi-bt-pesq {
+        justify-content: center;
+    }
 }
 
-.icon-nv-tema {
-    font-size: 3rem;
-    color: #004AAD
+@media (max-width: 399.00px) {
+    .table td {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        justify-content: center;
+    }
+    .table th {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+}
+
+element.style {
+    padding-right: 0%;
+}
+
+
+/* Caixas */
+
+.caixa-um {
+    height: 14rem;
+    border: 2px solid #acb1b9;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background-color: white;
+}
+
+.caixa-dois {
+    margin-top: 2rem;
+    border: 2px solid #acb1b9;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 1rem 1rem 1rem 1rem;
 }

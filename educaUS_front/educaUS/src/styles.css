@@ -6,10 +6,11 @@ html{
 
 
 .font {
-    font-family: Helvetica, sans-serif;
-}
-.font-spartan{
     font-family: 'Spartan', sans-serif;
+}
+.font-nome{
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
 }
 
 .color {

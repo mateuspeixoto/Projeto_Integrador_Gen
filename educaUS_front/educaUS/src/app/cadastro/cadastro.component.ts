@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,8 +16,8 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router
-
+    private router: Router,
+    private alert: AlertasService,
   ) { }
 
   ngOnInit() {
@@ -34,24 +35,44 @@ export class CadastroComponent implements OnInit {
 
     if (this.user.nomeUsuario.length < 5) {
       usuario = false
-      alert('Nome de usuario inválido! Insira no minimo 5 caracteres!')
-    }
+      this.alert.showAlertDanger('Nome de usuário inválido! Insira no minimo 5 caracteres!')
 
+      if (this.user.nome.length < 3) {
+        this.alert.showAlertDanger('Nome inválido! Insira no minimo 3 caracteres!')
+       
+      if (this.user.email.indexOf('@')  == -1 || this.user.email.indexOf('.com') == -1 ){
+        email = false 
+        this.alert.showAlertDanger('Email inválido! Formato: name@example.com')
+      
+        if (this.user.senha != this.confirmSenha) {
+          this.alert.showAlertDanger('As senhas não coincidem!')
+        }   
+            
+      }
+
+    }
+     
+  }
+    
     else if (this.user.email.indexOf('@')  == -1 || this.user.email.indexOf('.com') == -1 ){
       email = false 
-      alert('Email inválido!')
+      this.alert.showAlertDanger('Email inválido!')
+   
+      if (this.user.senha != this.confirmSenha) {
+        this.alert.showAlertDanger('As senhas não coincidem!')
+      }
+
     }
 
-
     else if (this.user.senha != this.confirmSenha) {
-      alert('As senhas não coincidem!')
+      this.alert.showAlertDanger('As senhas não coincidem!')
     }
 
     else {
       this.auth.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')
       })
     }
 

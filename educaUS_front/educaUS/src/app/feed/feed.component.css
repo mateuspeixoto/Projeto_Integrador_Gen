@@ -11,22 +11,14 @@
     width: 4rem;
     height: 4rem;
     border-bottom: 1px solid #acb1b9;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
+    margin-top: 1em;
+    margin-left:.5em;
     object-fit: cover;
 }
 
 .barra {
     height: 650px;
     width: 200px;
-    border: 2px solid #acb1b9;
-    border-radius: 10px 10px 10px 10px;
-    background-color: white;
-}
-
-.caixa-feed {
-    height: 100%;
-    width: 41rem;
     border: 2px solid #acb1b9;
     border-radius: 10px 10px 10px 10px;
     background-color: white;
@@ -40,52 +32,28 @@
 }
 
 .publicacao {
-    height: 3rem;
-    width: 33rem;
+    width: 100%;
     border: 2px solid #acb1b9;
     border-radius: 10px 10px 10px 10px;
-}
-
-.teste {
-    border: 1px solid red;
 }
 
 .texto {
     text-decoration: none;
 }
 
-.caixa-perfil {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 50%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 1rem 1rem 1rem 1rem;
-}
-
-.caixa-perfil-2 {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 80%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 1rem 1rem 1rem 1rem;
-}
-
 #perfil2 {
-    height: 7rem;
-    width: 7rem;
+    height: 6rem;
+    width: 6rem;
     margin-top: 1.5rem;
-    margin-left: 1.5rem;
+    object-fit: cover;
 }
 
 .padding {
-    padding: 1rem;
+    padding: .3rem;
+    width: 31vw;
 }
 
-.caixa-post {
-    height: 9rem;
-    width: 41rem;
+.box {
     border: 2px solid #acb1b9;
     border-radius: 1rem 1rem 1rem 1rem;
     background-color: white;
@@ -105,37 +73,23 @@
     color: rgba(47, 161, 255, 0.555);
 }
 
-.caixa-anuncio {
-    margin-top: 20px;
-    border: 2px solid #acb1b9;
-    height: 50%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
+.line {
+    line-height: 3em;
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer;
+}
+.publicacao:hover {
+  background-color: rgb(212, 208, 208);
+  transition: all 1s;
 }
 
-.caixa-direita {
-    margin-top: 2rem;
-    border: 2px solid #acb1b9;
-    height: 40%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.856);
-    border-radius: 10px 10px 10px 10px;
-}
 
 .anuncio {
     margin-top: 20px;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
-}
-
-.img-feed2 {
-    border-radius: 100%;
-    width: 4.5rem;
-    height: 4.5rem;
-    border-bottom: 1px solid #acb1b9;
-    margin-top: 1.5rem;
-    margin-left: 0.5rem;
+    object-fit: cover;
 }
 
 .artigo-icon {
@@ -148,12 +102,32 @@
     color: #000000;
 }
 
-a{
-    text-decoration: none;
-    color: #000000;
+
+.h-link{
+text-decoration: none;
+}
+.cb{
+    color: black;
+}
+#dropdownMenuButton{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: blue;
+}
+.div-nome{
+    width: -webkit-fill-available;
+}
+@media (max-width: 1200px) { 
+    #meusTemas{
+        display: none;
+    }
+}
+@media (max-width: 600px){
+    .col-md-3{
+        display: none;
+    }
+    .padding{
+        width: 75vw;
+    }
 }
 
-a:hover{
-    text-decoration: none;
-    color: #000000;
-}
