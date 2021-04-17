@@ -10,8 +10,6 @@ export class User {
    fotoPerfil: string; 
    fotoCapa: string;
    senha: string;
-   postagem:Postagem[]
-   temas:Tema[]
-   
-
+   postagem:Postagem[];
+    
 }
