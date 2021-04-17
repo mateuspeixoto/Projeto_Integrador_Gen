@@ -11,7 +11,7 @@ import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-feed',
-  templateUrl:'./feed.component.html',
+  templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
@@ -143,7 +143,7 @@ export class FeedComponent implements OnInit {
     this.postagem.temas = this.tema
     this.user.id = this.idUser
     this.postagem.usuario = this.user
-
+      
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
@@ -160,6 +160,7 @@ export class FeedComponent implements OnInit {
     this.postagem.temas = this.tema
     this.user.id = this.idUser
     this.postagem.usuario = this.user
+    
     
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
