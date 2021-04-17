@@ -45,12 +45,15 @@ public class Usuario {
 	
 	private String fotoPerfil;
 
-	
 	private String fotoCapa;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+	
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("usuario")
+	private List<Temas> temas;
 
 	public String getNomeUsuario() {
 		return nomeUsuario;
@@ -122,8 +125,14 @@ public class Usuario {
 
 	public void setBiografia(String biografia) {
 		this.biografia = biografia;
+	}
+
+	public List<Temas> getTemas() {
+		return temas;
+	}
+
+	public void setTemas(List<Temas> temas) {
+		this.temas = temas;
 	}	
-	
-	
 
 }
