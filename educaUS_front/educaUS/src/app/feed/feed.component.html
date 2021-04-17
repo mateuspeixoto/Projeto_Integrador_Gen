@@ -28,17 +28,12 @@
 
             </div>
 
-            <div class="text-center box p-3 mt-3 flex-column" id="meusTemas">
+            <div class="text-center box p-3 mt-3 flex-column" id="meusTemas" style="overflow: auto;">
                 <h5 class="">Meus temas</h5>
                 <hr>
                 <div>
-                <p><a routerLink="/tema">#robotica</a></p>
-
-                <p> <a routerLink="/tema">#programação</a></p>
-
-                <p><a routerLink="/tema">#ediçãodevideos</a></p>
-
-                <p><a routerLink="/tema">#ingles</a></p>
+                <p *ngFor='let tema of user.temas'>
+                    <a routerLink="/tema">#{{tema.nome}}</a></p>
                 </div>
 
             </div>

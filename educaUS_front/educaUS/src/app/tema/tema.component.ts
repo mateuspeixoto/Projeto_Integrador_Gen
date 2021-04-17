@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
@@ -11,7 +12,8 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./tema.component.css']
 })
 export class TemaComponent implements OnInit {
-
+    user: User = new User()
+    idUser = environment.id
     tema: Tema = new Tema()
     listaTema: Tema[]  
     idTema: number
@@ -39,6 +41,8 @@ export class TemaComponent implements OnInit {
   }
   
   cadastrarTema(){
+    this.user.id = this.idUser
+    this.tema.usuario = this.user
     this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
       this.tema = resp
       this.alert.showAlertSuccess('Tema cadastrado com sucesso!')
@@ -61,6 +65,8 @@ export class TemaComponent implements OnInit {
   }
 
   editarTema(){
+    this.user.id = this.idUser
+    this.tema.usuario = this.user
     this.temaService.putTema(this.tema).subscribe((resp:Tema)=> {
       this.tema = resp
       this.alert.showAlertSuccess('Tema atualizado com sucesso!')
