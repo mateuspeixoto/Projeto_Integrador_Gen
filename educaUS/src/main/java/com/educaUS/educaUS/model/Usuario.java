@@ -10,10 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
+
 
 @Entity
 @Table(name = "usuario")
@@ -51,10 +52,6 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("usuario")
-	private List<Temas> temas;
-
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -126,13 +123,5 @@ public class Usuario {
 	public void setBiografia(String biografia) {
 		this.biografia = biografia;
 	}
-
-	public List<Temas> getTemas() {
-		return temas;
-	}
-
-	public void setTemas(List<Temas> temas) {
-		this.temas = temas;
-	}	
 
 }
