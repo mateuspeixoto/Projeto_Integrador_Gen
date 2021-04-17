@@ -1,4 +1,5 @@
 import { Postagem } from "./Postagem";
+import { Tema } from "./Tema";
 
 export class User {
    id:number;
@@ -10,6 +11,7 @@ export class User {
    fotoCapa: string;
    senha: string;
    postagem:Postagem[]
+   temas:Tema[]
    
 
 }
