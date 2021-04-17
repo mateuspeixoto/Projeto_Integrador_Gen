@@ -41,6 +41,9 @@ export class PerfilComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.findAllPostagem()
+
     window.scroll(0, 0)
     if (environment.token == '') {
       this.alert.showAlertInfo('Sua sessão expirou, faça login novamente!')
@@ -52,7 +55,6 @@ export class PerfilComponent implements OnInit {
     this.findByIdUser()
     this.idPost = id
     this.findByIdPostagem(this.idPost)
-    this.findAllPostagem()
     this.findAllTema()
 
   }
@@ -125,6 +127,10 @@ export class PerfilComponent implements OnInit {
 
   /*POSTAGEM*/
 
+  novoPost(){
+    this.postagem = new Postagem()
+  }
+
   findAllPostagem() {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp
@@ -146,8 +152,8 @@ export class PerfilComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
-      this.postagem = new Postagem()
       this.findAllPostagem()
+      this.postagem = new Postagem()
     })
 
   }
@@ -161,7 +167,7 @@ export class PerfilComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem alterada com sucesso!')
-      this.findAllPostagem()  
+      this.findAllPostagem()
       this.postagem = new Postagem()
     })
 
@@ -172,7 +178,7 @@ export class PerfilComponent implements OnInit {
     this.findByIdPostagem(id)
     this.postagemService.delete(id).subscribe(() => {
       this.alert.showAlertInfo('Postagem deletada com sucesso!')
-      this.findAllPostagem()  
+      this.findAllPostagem()
       this.postagem = new Postagem()
     })
   }

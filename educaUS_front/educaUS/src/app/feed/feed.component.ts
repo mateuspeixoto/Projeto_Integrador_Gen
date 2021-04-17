@@ -28,7 +28,8 @@ export class FeedComponent implements OnInit {
   confirmSenha: string
   listaTema: Tema[]
   listaPostagem: Postagem[]
-  key= 'postdate'
+  key = 'postdate'
+  keyTema = 'id'
   reverse = true
   descricaoPost: string
 

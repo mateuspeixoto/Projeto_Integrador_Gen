@@ -28,12 +28,12 @@
 
             </div>
 
-            <div class="text-center box p-3 mt-3 flex-column" id="meusTemas" style="height: 250px; overflow: auto;">
-                <h5 class="">Temas</h5>
+            <div class="text-center box p-3 mt-3 flex-column" id="meusTemas">
+                <h5 class="">Temas Recentes</h5>
                 <hr>
                 <div>
-                <p *ngFor='let tema of listaTema'>
-                    <a routerLink="/tema">#{{tema.nome}}</a></p>
+                <p *ngFor='let tema of listaTema | slice:(-4) | orderBy : keyTema : reverse'>
+                    <a routerLink="/tema" >#{{tema.nome}}</a></p>
                 </div>
 
             </div>
