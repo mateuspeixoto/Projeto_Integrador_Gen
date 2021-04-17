@@ -32,8 +32,9 @@
                 <h5 class="">Temas Recentes</h5>
                 <hr>
                 <div>
-                <p *ngFor='let tema of listaTema | slice:(-4) | orderBy : keyTema : reverse'>
-                    <a routerLink="/tema" >#{{tema.nome}}</a></p>
+                <p *ngFor='let tema of listaTema | slice:(-4) | orderBy : keyTema : reverse' id="temas">
+                    <a data-toggle="modal" data-target="#postTema"
+                    [routerLink]="['/feed', tema.id]">#{{tema.nome}}</a></p>
                 </div>
 
             </div>
@@ -160,18 +161,18 @@
     <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
             <div class="modal-header bg-educa text-white">
-                <h4 class="modal-title titulo-centro " id="TituloModalCentralizado">#Tema</h4>
+                <h4 class="modal-title titulo-centro " id="TituloModalCentralizado">#{{tema.nome}}</h4>
 
               
 
-                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar" [routerLink]="['/feed']">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
           
             <div class="ml-2 mr-2 d-flex flex-column justify-content-center">
                 <div class="box mt-3 d-flex flex-column justify-content-center"
-                    *ngFor='let post of listaPostagem | orderBy : key : reverse'>
+                    *ngFor='let post of tema.postagem | orderBy : key : reverse'>
                     <div>
                         <div class="d-flex ">
                             <img src="{{post.usuario.fotoPerfil}}" class="img-feed" id="perfil" alt="">
@@ -186,24 +187,9 @@
                                     </span>
                                 </div>
                             </div>
-
-                            <div class="d-flex align-items-center justify-content-end margin-left mr-3 mb-0"
-                                *ngIf="post.usuario.id == idUser">
-                                <i class="fa fa-ellipsis-h" id="dropdownMenuButton" aria-hidden="true"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    aria-hidden="true"></i>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#excluirPost"
-                                        [routerLink]="['/feed', post.id]"> Apagar
-                                        <i class="fa fa-trash" aria-hidden="true"></i></a>
-                                    <a class="dropdown-item" data-toggle="modal" data-target="#editarPost"
-                                        [routerLink]="['/feed', post.id]">Editar
-                                        <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <h5 class="ml-4">#{{post.temas.nome}}</h5>
+                    <h5 class="ml-4">#{{tema.nome}}</h5>
                     <div>
                         <div class=" d-flex">
                             <div class="ml-4 mr-4">
@@ -226,7 +212,7 @@
 
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" [routerLink]="['/feed']">Sair</button>
             </div>
         </div>
     </div>
