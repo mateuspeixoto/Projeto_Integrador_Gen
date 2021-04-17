@@ -7,6 +7,5 @@ export class Tema{
     categoria:string;
     cursos:string;
     postagem:Postagem[]
-    usuario:User    
-
+     
 }

@@ -42,7 +42,6 @@ export class TemaComponent implements OnInit {
   
   cadastrarTema(){
     this.user.id = this.idUser
-    this.tema.usuario = this.user
     this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
       this.tema = resp
       this.alert.showAlertSuccess('Tema cadastrado com sucesso!')
@@ -66,7 +65,6 @@ export class TemaComponent implements OnInit {
 
   editarTema(){
     this.user.id = this.idUser
-    this.tema.usuario = this.user
     this.temaService.putTema(this.tema).subscribe((resp:Tema)=> {
       this.tema = resp
       this.alert.showAlertSuccess('Tema atualizado com sucesso!')
