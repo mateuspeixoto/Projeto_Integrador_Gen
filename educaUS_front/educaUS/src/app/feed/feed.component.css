@@ -117,6 +117,7 @@ text-decoration: none;
 .div-nome{
     width: -webkit-fill-available;
 }
+
 @media (max-width: 1200px) { 
     #meusTemas{
         display: none;

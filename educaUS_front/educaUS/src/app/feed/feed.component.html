@@ -33,7 +33,7 @@
                 <hr>
                 <div>
                 <p *ngFor='let tema of listaTema'>
-                    <a routerLink="/tema">#{{tema.nome}}</a></p>
+                    <a data-toggle="modal" data-target="#postTema">#{{tema.nome}}</a></p>
                 </div>
 
             </div>
@@ -153,6 +153,86 @@
         </div>
     </div>
 </div>
+
+<!-- Modal PostPorTema-->
+<div class="modal fade mt-3" id="postTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true" data-backdrop="static" style="height: 600px; overflow: auto;">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-educa text-white">
+                <h4 class="modal-title titulo-centro " id="TituloModalCentralizado">#Tema</h4>
+
+              
+
+                <button type="button" class="close ml-auto text-white" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+          
+            <div class="ml-2 mr-2 d-flex flex-column justify-content-center">
+                <div class="box mt-3 d-flex flex-column justify-content-center"
+                    *ngFor='let post of listaPostagem | orderBy : key : reverse'>
+                    <div>
+                        <div class="d-flex ">
+                            <img src="{{post.usuario.fotoPerfil}}" class="img-feed" id="perfil" alt="">
+                            <div class="div-nome">
+                                <a class="h-link" [routerLink]="['/perfil', post.usuario.id]" data-dismiss="modal">
+                                    <h5 class="mt-4 ml-2 mb-0 font-nome color">{{post.usuario.nome}}</h5>
+                                </a>
+                                <span class="text-muted ml-2 ">(@{{post.usuario.nomeUsuario}})</span>
+                                <div class="mb-3">
+                                    <span class="text-muted ml-2 ">{{post.postdate | date: 'dd/MM/yyyy'}} às
+                                        {{post.postdate | date:'HH:mm'}}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-end margin-left mr-3 mb-0"
+                                *ngIf="post.usuario.id == idUser">
+                                <i class="fa fa-ellipsis-h" id="dropdownMenuButton" aria-hidden="true"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    aria-hidden="true"></i>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#excluirPost"
+                                        [routerLink]="['/feed', post.id]"> Apagar
+                                        <i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#editarPost"
+                                        [routerLink]="['/feed', post.id]">Editar
+                                        <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="ml-4">#{{post.temas.nome}}</h5>
+                    <div>
+                        <div class=" d-flex">
+                            <div class="ml-4 mr-4">
+                                <p> {{post.descricao}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="ml-2 mr-2">
+                    <div>
+                        <div class="d-flex">
+                            <div class="ml-4 d-flex justify-content-start">
+                                <div class="ml-4 mr-4">
+                                    <p>Referência: <a href="{{post.link}}" target="blank">{{post.link}}</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sair</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal PostPorTema-->
+
 <!-- Modal Novo Post-->
 <div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true" data-backdrop="static">
