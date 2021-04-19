@@ -1,0 +1,101 @@
+/* Estilização - Botões */
+
+.btn-primary {
+    background-color: #004AAD;
+}
+
+.tm-icon {
+    height: 3rem;
+    width: 10rem;
+}
+
+.fa {
+    color: rgba(47, 161, 255, 0.555);
+}
+
+.icons-edit-del {
+    font-size: 1.5rem;
+    color: #004AAD;
+}
+
+.icon-nv-tema {
+    font-size: 3rem;
+    color: #004AAD
+}
+
+
+/* Estilização - Modais */
+
+.modalB {
+    width: 200px;
+}
+
+.bordaN {
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+.mr-12 {
+    margin-right: 12rem;
+}
+
+.fa-search {
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #004AAD;
+}
+
+.titulo-centro {
+    margin-left: 31%;
+    font-size: 25pt;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 575.00px) {
+    .posi-bt-pesq {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 399.00px) {
+    .table td {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        justify-content: center;
+    }
+    .table th {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+}
+
+element.style {
+    padding-right: 0%;
+}
+
+
+/* Caixas */
+
+.caixa-um {
+    height: 14rem;
+    border: 2px solid #acb1b9;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background-color: white;
+}
+
+.caixa-dois {
+    margin-top: 2rem;
+    border: 2px solid #acb1b9;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 1rem 1rem 1rem 1rem;
+}

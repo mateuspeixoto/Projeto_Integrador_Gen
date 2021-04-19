@@ -1,0 +1,40 @@
+/*ESTILOS ENTRAR*/
+
+.linha-vertical{
+    height: 350px;
+  border-left: 1px solid;
+  color: #004AAD;
+  
+}
+
+.font{
+  font-family: Helvetica, sans-serif;
+}
+
+.color{
+  color: #004AAD;
+}
+
+
+#espaço{
+    margin-top: 100px;
+}
+
+#background-config{
+     background-position: center;
+       background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+}
+.w-90{
+  width: 90%;
+}
+
+@media (max-width: 767.98px) { 
+  .logo{
+    display: none;
+  }
+  .linha-vertical{
+    width: 100%;
+  }
+ }

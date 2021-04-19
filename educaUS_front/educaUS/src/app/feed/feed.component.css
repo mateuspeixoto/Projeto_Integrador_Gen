@@ -1,0 +1,140 @@
+#temas{
+    color: rgb(26, 161, 223);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.postagem-feed {
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    height: 200px;
+    width: 800px;
+    background-color: white;
+}
+
+.img-feed {
+    border-radius: 100%;
+    width: 4rem;
+    height: 4rem;
+    border-bottom: 1px solid #acb1b9;
+    margin-top: 1em;
+    margin-left:.5em;
+    object-fit: cover;
+}
+
+.barra {
+    height: 650px;
+    width: 200px;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+}
+
+.text-area {
+    left: 300px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+}
+
+.publicacao {
+    width: 100%;
+    border: 2px solid #acb1b9;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.texto {
+    text-decoration: none;
+}
+
+#perfil2 {
+    height: 6rem;
+    width: 6rem;
+    margin-top: 1.5rem;
+    object-fit: cover;
+}
+
+.padding {
+    padding: .3rem;
+    width: 31vw;
+}
+
+.box {
+    border: 2px solid #acb1b9;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background-color: white;
+    margin-top: 2rem;
+}
+
+.tm-icon {
+    height: 3rem;
+    width: 10rem;
+}
+
+.titulo-centro {
+    margin-left: 31%;
+}
+
+.fa {
+    color: rgba(47, 161, 255, 0.555);
+}
+
+.line {
+    line-height: 3em;
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer;
+}
+.publicacao:hover {
+  background-color: rgb(212, 208, 208);
+  transition: all 1s;
+}
+
+
+.anuncio {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    object-fit: cover;
+}
+
+.artigo-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+.link-icon {
+    font-size: 2rem;
+    color: #000000;
+}
+
+
+.h-link{
+text-decoration: none;
+}
+.cb{
+    color: black;
+}
+#dropdownMenuButton{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: blue;
+}
+.div-nome{
+    width: -webkit-fill-available;
+}
+
+@media (max-width: 1200px) { 
+    #meusTemas{
+        display: none;
+    }
+}
+@media (max-width: 600px){
+    .col-md-3{
+        display: none;
+    }
+    .padding{
+        width: 75vw;
+    }
+}
+

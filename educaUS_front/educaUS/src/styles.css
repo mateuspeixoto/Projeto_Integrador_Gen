@@ -1,0 +1,36 @@
+/* GERAL OFICIAL */
+html{
+    scroll-behavior: smooth;
+    
+}
+
+
+.font {
+    font-family: 'Spartan', sans-serif;
+}
+.font-nome{
+    font-family: 'Spartan', sans-serif;
+    font-weight: bold;
+}
+
+.color {
+    color: #004AAD;
+}
+
+.border {
+    border: 5px solid red;
+}
+
+.bg {
+    background-color: #f3f2ee;
+}
+
+.div-nome {
+    border: 2px;
+}
+
+.bg-educa{
+    background-color: #004AAD;
+
+}
+

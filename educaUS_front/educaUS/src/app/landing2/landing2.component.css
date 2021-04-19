@@ -1,0 +1,278 @@
+
+/* Resposividade do texto */
+ h1 {
+    font-size: clamp(2em, 2em + 2vw, 2.5em)  ;
+  } 
+
+
+
+    .txt-cadastre_se{
+    margin-left: -20% !important;
+      
+  }
+
+  .txt-aprenda{
+       margin-top: -5% !important;
+       margin-left: -10% !important;
+
+  } 
+
+  #txt-oq_sabe{
+      padding: -20%;
+
+      
+  }
+  .mt-txt{
+      margin-top: -20% !important;
+  }
+
+  .txt-ensine{
+      margin-top: -2% !important;
+
+     
+  }
+   
+
+.squad{
+    color:#004AAD ;
+    font-size: 4em;
+}
+
+.tm-logo{
+    height: 10vh;
+    
+}
+
+.txt-img{
+    display:flex
+}
+
+
+
+.bg-nav{
+    background-color: rgba(250, 250, 250, 0.815);
+    border-bottom: 1px solid #ACB1B9;
+       
+}
+
+
+/* EQUIPE*/ 
+
+
+ .card-squad{
+    border: 1px solid #ACB1B9;
+    background-color: #fff;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.233);
+}
+
+
+
+.div a{
+    text-decoration: none;
+}
+
+.bn-font{
+    font-size: 15pt;
+}
+
+.redes{
+    margin-top: 5px;
+    font-size: 20pt;
+    color: #171515;
+}
+
+.img-border{
+    width: 9em;
+    height: 9em;
+    transition: all .5s;
+    border: 10px solid transparent;
+    border-radius: 100%;
+  
+}
+
+.img-border:hover{
+    width: 9em;
+    height: 9em;
+    transition: all .5s;
+    border: 1px solid #004AAD;
+    border-radius: 100%;
+} 
+
+h4 a{
+    text-decoration: none;
+    font-size: 1em;
+    color:#004AAD;
+    transition: all 0.5s;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+h4 a:hover{
+    text-decoration: none;
+    font-size: 1em;
+    color:#004AAD;
+    border: 1px solid #004AAD;
+   
+    border-radius: 1%;
+}
+
+ ul li a{
+    transition: all 0.5s;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    border: 1px solid #004AAD;
+    padding: 5px;   
+    border-radius: 1%;
+}
+
+.nav-font{
+    font-size: 1em;
+    color: #004AAD;
+    
+} 
+
+.ml-10{
+    margin-left: 2.5em;
+}
+
+/* Icones de midias sociais */
+.fa-github-square{
+    transition: all .5s;
+    font-size: 20pt;
+    color: #171515;
+    text-shadow: 0px 0px 3px #000; 
+}
+
+.fa-github-square:hover{
+    font-size: 20pt;
+    color: #171515;
+    text-shadow: 0px 0px 0px #000; 
+}
+
+.fa-linkedin-square{
+    transition: all .5s;
+    font-size: 20pt;
+    color: #004AAD;
+    text-shadow: 0px 0px 3px #000;
+    
+}
+
+.fa-linkedin-square:hover{
+    font-size: 20pt;
+    color: #004AAD;
+    text-shadow: 0px 0px 0px #000; 
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px)
+{
+  .txt-img
+   {
+    display: wrap;
+   }
+}
+
+@media(max-width:770px)
+{
+    .setas{
+        display:none
+    }
+    .btn{
+        margin-top: 20% !important;
+    }
+   
+}
+
+@media(max-width:315px)
+{
+    .box{
+        width:100%;
+        padding:0;
+    }
+    
+}
+
+@media(max-width:768px){
+    #txt-2{margin-left:0 !important}
+    .txt-cadastre_se{margin-left:0 !important}
+    .txt-aprenda{margin-left: 0 !important;}
+    
+}
+
+
+.box1{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.233);
+    padding: 2em;
+    
+
+}
+
+.box{
+    background-color: #004AAD;
+    margin-top: -70px;
+    border-radius: 5px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.233);
+    padding: 2em;
+    
+}
+
+ .box:hover{
+background-color: #fff;
+color:#004AAD;
+border: 2px solid #004AAD ;
+}
+
+.box1:hover{
+    background-color: #004AAD;
+    color:#fff;
+    border: 2px solid #fff ; 
+}
+
+/* div.box1:not(.not){
+    background-color: #fff;
+} */
+
+.nome{
+    padding-left: 100px;
+    padding-top: 45px;
+    font-size: 2em;
+}
+
+.traço{
+    border: 1px solid #000
+    
+}
+
+
+.cadastre_se:hover {
+    background-color: #fff;
+    border: 2px solid #004AAD;
+    color:#004AAD;
+}
+
+.cadastre_se{
+    width:50%;
+    height: 70%;
+    margin-bottom:1em ;
+    color:#fff;
+    font-size: 200%;
+
+
+}
+
+.btn{
+    white-space: normal !important;
+}
+.img-border{
+    object-fit: contain;
+}
+
+#txt-2{
+    margin-left: -20%;
+}

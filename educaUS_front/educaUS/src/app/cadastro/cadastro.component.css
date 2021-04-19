@@ -1,0 +1,22 @@
+/*ESTILOS CADASTRO*/
+
+.rcorners2 {
+    border-radius: 15px;
+    border: 1px solid #004AAD;
+    padding: 20px;
+    width: 200px;
+    height: 700px;
+    background-color: white;
+  }
+
+  .b-lg-425{
+      width: 425px;
+  }
+
+  .fs-9pt{
+      font-size: 9pt;
+  }
+
+  .fs-13pt{
+      font-size: 13pt;
+  }
