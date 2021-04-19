@@ -28,7 +28,8 @@ export class FeedComponent implements OnInit {
   confirmSenha: string
   listaTema: Tema[]
   listaPostagem: Postagem[]
-  key= 'postdate'
+  key = 'postdate'
+  keyTema = 'id'
   reverse = true
   descricaoPost: string
 
@@ -49,6 +50,7 @@ export class FeedComponent implements OnInit {
     }
 
     let id = this.route.snapshot.params['id']
+    this.findTemaById(id)
     this.findByIdPostagem(id)
     this.findAllTema()
     this.findAllPostagem()
@@ -114,6 +116,12 @@ export class FeedComponent implements OnInit {
 
   findByIdTema() {
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp
+    })
+  }
+
+  findTemaById(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
